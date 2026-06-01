@@ -17,7 +17,7 @@ const COPY = {
     eyebrow: "Private launch · Salesforce Commerce Cloud",
     h1Lead: "Predictable cadence.\nSenior operators.",
     h1Accent: "Managed Tokens for SFCC.",
-    lede: "Stop paying for ceremonies. Stop waiting weeks for an estimate. Stop accepting code shipped by developers that haven't properly synced to your requirements.",
+    lede: "A senior operator with instant, deep context on your entire codebase. An estimate grounded in your actual code, back in minutes. Every engagement compounds — the models keep improving, and so does the work.",
     primary: "Join the waiting list",
     secondary: "See how Managed Tokens work",
     meta: [
@@ -30,7 +30,7 @@ const COPY = {
   pains: {
     eyebrow: "The diagnosis",
     h2: "Three pains. One root cause.",
-    sub: "Every frustration an E-commerce Director has with their incumbent SI is a symptom of one thing: the people writing the code are too many layers away from the merchant who needs it.",
+    sub: "Every slowdown an E-commerce Director runs into traces to the same root: the people writing the code are too many layers away from the merchant who needs it — and carrying too little context about the codebase they're changing.",
     cards: [
       {
         num: "01",
@@ -47,9 +47,9 @@ const COPY = {
       },
       {
         num: "03",
-        title: "Slow, inaccurate developers",
-        symptom: "Estimate drift. Missed scope. Bugs that ship to production.",
-        conseq: "Your team loses faith in the work, and your CFO loses faith in the line item.",
+        title: "Context gaps",
+        symptom: "Estimates made without reading your code. Scope built on meeting notes, not the actual repository.",
+        conseq: "It's not a people problem. It's what happens when the person building doesn't have full context before they quote.",
       },
     ],
   },
@@ -58,10 +58,10 @@ const COPY = {
     eyebrow: "The shift",
     h2: "Agile is dead. You're paying for ceremonies.",
     paragraphs: [
-      "AI didn't make developers ten times faster. It collapsed the gap between intent and working code — which means the bottleneck moved.",
-      "Estimation, planning, scoping, debate: the rituals that justified two-week sprints exist because writing code used to be the slow part. It isn't anymore.",
-      "Traditional system integrators are structurally built around the old bottleneck. Their margin lives in the ceremony, their org chart depends on a leverage pyramid of juniors billed at senior rates. They cannot pivot to minutes-not-weeks without dismantling the model that pays their bench.",
-      "We were built without that pyramid. The AI handles volume. Senior operators handle judgment. Every token traces to a named human who reviewed every line.",
+      "AI didn't just make developers faster. It collapsed the gap between intent and working code — which means the bottleneck moved.",
+      "Estimation, planning, scoping, debate: the rituals that justified two-week sprints made sense when writing code was the slow part. It isn't anymore.",
+      "Most system integrators were built around that old bottleneck — their org charts, billing models, and sprint rituals were all shaped by it. Pivoting is genuinely hard when the economics depend on the model you're running.",
+      "We were built without that pyramid. AI gives our operators instant, deep context across your entire codebase — the depth that used to take months to accumulate. Seniors handle judgment; the engine handles volume. And because the underlying models improve roughly quarterly, every engagement gets sharper over time — automatically, without renegotiation.",
     ],
     kicker: "We don't want to replace your SI. We're the velocity layer that sits on top.",
   },
@@ -86,7 +86,7 @@ const COPY = {
       {
         num: "03",
         label: "Build",
-        desc: "AI generates the change. One named senior operator reviews, refines, and validates. No junior layer to escalate through.",
+        desc: "AI generates the change. One named senior operator reviews, refines, and validates — with full codebase context and the experience to make architectural calls.",
       },
       {
         num: "04",
@@ -241,8 +241,8 @@ const COPY = {
 
   team: {
     eyebrow: "Who builds this",
-    h2: "Senior operators only. No bench-to-burn. No leverage pyramid.",
-    body: "Tokenwright is staffed entirely by senior SFCC operators with deep experience shipping in production. There is no junior layer to escalate through and no offshore handoff. Each Managed Token traces to a named human who reviewed every line.",
+    h2: "Senior operators. Full codebase context. Every request, end-to-end.",
+    body: "Tokenwright is staffed entirely by senior SFCC operators with deep experience shipping in production. Each one works with the full codebase context the engine provides — no context loss, no handoff chain, no junior layer between you and the person doing the work. Every Managed Token traces to a named human who reviewed every line.",
     credibility: {
       k: "Backed by",
       v: "ZaUtre",
@@ -285,7 +285,7 @@ const COPY = {
 
   pricing: {
     crumb: "Pricing",
-    h1: "Managed Tokens. Priced for the work, not the meeting.",
+    h1: "Managed Tokens. Predictable pricing for senior delivery.",
     lede: "Buy in blocks. Subscribe in tiers. Spend on tasks. The token cap on every quote is firm — overruns are on us.",
     tiers: [
       {
@@ -351,7 +351,7 @@ const COPY = {
   howItWorksPage: {
     crumb: "How it works",
     h1: "From request to merge-ready PR. The full mechanic.",
-    lede: "We removed everything that doesn't directly produce code: planning ceremonies, estimation theatre, multi-layer review. Here's what's left.",
+    lede: "When AI gives operators full codebase context before they write a line, the delivery flow changes. Here's what that looks like.",
   },
 
   onboarding: {
