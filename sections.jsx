@@ -23,7 +23,7 @@ function Hero() {
               }}>
                 {c.primary}<Arrow />
               </a>
-              <a href="#how-it-works" className="btn btn-secondary">
+              <a href="#/#how-it-works" className="btn btn-secondary">
                 {c.secondary}
               </a>
             </Reveal>

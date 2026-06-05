@@ -3,12 +3,12 @@
 const COPY = {
   brand: {
     name: "Tokenwright",
-    tag: "Productized AI-leveraged delivery for Salesforce Commerce Cloud.",
+    tag: "Productized, AI-accelerated delivery for Salesforce Commerce Cloud.",
   },
 
   nav: [
     { label: "How it works", href: "#/how-it-works" },
-    { label: "Agents",       href: "#agents" },
+    { label: "Agents",       href: "#/#agents" },
     { label: "Pricing",      href: "#/pricing" },
     { label: "Onboarding",   href: "#/onboarding" },
   ],
@@ -81,7 +81,7 @@ const COPY = {
         label: "Specification",
         desc: "Our engine returns the scope, approach, token quote, and risk flags. You approve before any tokens are deducted.",
         featured: true,
-        badge: "Quote in minutes",
+        badge: "Quote in minutes, not weeks",
       },
       {
         num: "03",
@@ -170,7 +170,7 @@ const COPY = {
         n: "Stage 03",
         title: "Full stack",
         when: "When you ask",
-        body: "ZaUtre absorbs the traditional SFCC scope — deploys, support, 24/7 operations — under the Tokenwright relationship. One vendor, one bill, one team. Stage 3 is a conversation you raise, not one we pitch.",
+        body: "We absorb the traditional SFCC scope — deploys, support, 24/7 operations — under one Tokenwright relationship. One vendor, one bill, one team. Stage 03 is a conversation you raise, not one we pitch.",
       },
     ],
   },
@@ -286,7 +286,7 @@ const COPY = {
   pricing: {
     crumb: "Pricing",
     h1: "Managed Tokens. Predictable pricing for senior delivery.",
-    lede: "Buy in blocks. Subscribe in tiers. Spend on tasks. The token cap on every quote is firm — overruns are on us.",
+    lede: "Buy in blocks. Subscribe in tiers. Spend on tasks. The token cap on every quote is firm — overruns are on us. And your architecture quality directly lowers your run-rate: cleaner code means cheaper quotes.",
     tiers: [
       {
         name: "Block",
@@ -313,7 +313,7 @@ const COPY = {
           "Dedicated senior operator",
           "Priority queue (24h quote)",
           "Quarterly architecture review",
-          "Refactor budget allocation",
+          "Refactor budget — lowers your run-rate",
         ],
         cta: "Talk to us",
         feature: true,
