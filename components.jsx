@@ -111,7 +111,7 @@ function Foot() {
 }
 
 /* ---------------- reveal-on-scroll wrapper ---------------- */
-function Reveal({ children, delay = 0, as: As = "div", className = "", ...rest }) {
+function Reveal({ children, delay = 0, as: As = "div", className = "", style, ...rest }) {
   const ref = useRef(null);
   const [shown, setShown] = useState(false);
   useEffect(() => {
@@ -132,7 +132,7 @@ function Reveal({ children, delay = 0, as: As = "div", className = "", ...rest }
     <As
       ref={ref}
       className={`reveal ${shown ? "in" : ""} ${className}`}
-      style={{ "--reveal-delay": `${delay}ms` }}
+      style={{ "--reveal-delay": `${delay}ms`, ...style }}
       {...rest}
     >
       {children}

@@ -54,7 +54,7 @@ function Pains() {
             <Reveal key={card.num} className={`pain-card ${card.root ? "root" : ""}`} delay={i * 80}>
               <div className="num">
                 {card.num}
-                {card.root && <span className="root-tag">root cause</span>}
+                {card.root && <span className="root-tag">common thread</span>}
               </div>
               <h3>{card.title}</h3>
               <p className="symptom">{card.symptom}</p>
@@ -114,7 +114,7 @@ function HowItWorks() {
   );
 }
 
-/* ---------------- AGENTS (Persistent Intelligence Layer) ---------------- */
+/* ---------------- AGENTS (always-on intelligence layer) ---------------- */
 function Agents() {
   const c = window.COPY.agents;
   return (
@@ -348,7 +348,10 @@ function Team() {
         <Reveal><Eyebrow>{c.eyebrow}</Eyebrow></Reveal>
         <Reveal as="h2" delay={60} style={{ marginTop: 20, maxWidth: 760 }}>{c.h2}</Reveal>
         <div className="team-block">
-          <Reveal as="p" delay={120}>{c.body}</Reveal>
+          <div>
+            <Reveal as="p" delay={120}>{c.body}</Reveal>
+            {c.cadence && <Reveal as="p" delay={160} style={{ marginTop: 20 }}>{c.cadence}</Reveal>}
+          </div>
           <Reveal className="credibility-card" delay={180}>
             <div className="k">{c.credibility.k}</div>
             <div className="v">{c.credibility.v}</div>

@@ -17,53 +17,54 @@ const COPY = {
     eyebrow: "Private launch · Salesforce Commerce Cloud",
     h1Lead: "Predictable cadence.\nSenior operators.",
     h1Accent: "Managed Tokens for SFCC.",
-    lede: "A senior operator with instant, deep context on your entire codebase. An estimate grounded in your actual code, back in minutes. Every engagement compounds — the models keep improving, and so does the work.",
+    lede: "The backlog item that's been stuck for months can ship this week. One senior operator, with deep context on your entire codebase, quotes it against your actual code in minutes and delivers a merge-ready PR in days. And because the models keep improving, every engagement gets sharper than the last.",
     primary: "Join the waiting list",
     secondary: "See how Managed Tokens work",
     meta: [
       "Quote in minutes",
       "Merge-ready PR in days",
-      "One senior operator per request",
+      "Tokens map to senior work, not compute",
+      "Firm cap, overruns on us",
     ],
   },
 
   pains: {
-    eyebrow: "The diagnosis",
-    h2: "Three pains. One root cause.",
-    sub: "Every slowdown an E-commerce Director runs into traces to the same root: the people writing the code are too many layers away from the merchant who needs it — and carrying too little context about the codebase they're changing.",
+    eyebrow: "Why now",
+    h2: "Three places teams lose time.",
+    sub: "Most E-commerce Directors work with capable teams who genuinely want to ship. Good ideas still wait, though — usually because of distance between the people writing the code and the merchant who needs it, and how much context travels with each request.",
     cards: [
       {
         num: "01",
         title: "Organizational distance",
-        symptom: "The people writing your code are four layers removed from the merchant who needs it.",
-        conseq: "Siloed orgs, diffuse decisions, junior devs shipping work no senior touched.",
+        symptom: "Requests pass through several hands before they reach the developer who builds them.",
+        conseq: "Context thins at each handoff, and the original intent gets harder to trace.",
         root: true,
       },
       {
         num: "02",
-        title: "Agile fatigue",
-        symptom: "Refinement, estimation, planning, scope debate. Weeks of ceremony before a developer touches code.",
-        conseq: "Your roadmap moves at the speed of meetings, not the speed of your business.",
+        title: "Planning overhead",
+        symptom: "Refinement, estimation, planning, scoping — all valuable, but it can add up to weeks before a developer touches code.",
+        conseq: "Your roadmap can end up moving at the speed of meetings rather than the speed of your business.",
       },
       {
         num: "03",
         title: "Context gaps",
-        symptom: "Estimates made without reading your code. Scope built on meeting notes, not the actual repository.",
-        conseq: "It's not a people problem. It's what happens when the person building doesn't have full context before they quote.",
+        symptom: "Estimates are often built from meeting notes rather than a deep read of the actual repository.",
+        conseq: "When full codebase context isn't on hand before a quote, even great teams are working partly from guesswork.",
       },
     ],
   },
 
   shift: {
     eyebrow: "The shift",
-    h2: "Agile is dead. You're paying for ceremonies.",
+    h2: "Code is no longer the slow part. Your roadmap shouldn't be either.",
     paragraphs: [
-      "AI didn't just make developers faster. It collapsed the gap between intent and working code — which means the bottleneck moved.",
-      "Estimation, planning, scoping, debate: the rituals that justified two-week sprints made sense when writing code was the slow part. It isn't anymore.",
-      "Most system integrators were built around that old bottleneck — their org charts, billing models, and sprint rituals were all shaped by it. Pivoting is genuinely hard when the economics depend on the model you're running.",
-      "We were built without that pyramid. AI gives our operators instant, deep context across your entire codebase — the depth that used to take months to accumulate. Seniors handle judgment; the engine handles volume. And because the underlying models improve roughly quarterly, every engagement gets sharper over time — automatically, without renegotiation.",
+      "AI didn't just make developers faster. It collapsed the gap between intent and working code — which means the slow part of delivery has moved.",
+      "Estimation, planning, and scoping made complete sense when writing code was the slow part. Now that working code comes faster, there's room to spend less time planning and more time shipping.",
+      "Most system integrators built their teams and rhythms around that earlier shape of the work — and they're genuinely good at it. Layering a new model on top of an established, well-run practice simply takes time.",
+      "Tokenwright was built for this new shape from day one. AI gives our operators instant, deep context across your entire codebase — depth that used to take months to accumulate. Seniors handle the judgment; the engine handles the volume. And because the underlying models improve roughly quarterly, every engagement gets sharper, automatically, with no renegotiation.",
     ],
-    kicker: "We don't want to replace your SI. We're the velocity layer that sits on top.",
+    kicker: "We're not here to replace your SI. We're the velocity layer that sits on top — making the work they already do easier.",
   },
 
   how: {
@@ -97,7 +98,7 @@ const COPY = {
   },
 
   agents: {
-    eyebrow: "The Persistent Intelligence Layer",
+    eyebrow: "Always-on intelligence",
     h2: "Your codebase, always understood. Even when you're not spending tokens.",
     sub: "Once you're onboarded, the engine runs continuously. The same understanding that prices your tasks is available to your internal team as a set of agents — included with the subscription, not sold as separate SKUs.",
     cards: [
@@ -242,7 +243,8 @@ const COPY = {
   team: {
     eyebrow: "Who builds this",
     h2: "Senior operators. Full codebase context. Every request, end-to-end.",
-    body: "Tokenwright is staffed entirely by senior SFCC operators with deep experience shipping in production. Each one works with the full codebase context the engine provides — no context loss, no handoff chain, no junior layer between you and the person doing the work. Every Managed Token traces to a named human who reviewed every line.",
+    body: "Tokenwright is staffed entirely by senior SFCC operators with deep experience shipping in production. Each one works with the full codebase context the engine provides — no context loss, no handoff chain, no extra layer between you and the person doing the work. Every Managed Token traces to a named human who reviewed every line.",
+    cadence: "This is also why we talk about cadence. Context-switching costs far less than it used to — the engine keeps your entire codebase loaded, so your operator picks up exactly where they left off. But one operator still carries your whole project: they do the work of a full team and learn how you actually operate. You get the most from that when the load is steady and predictable. Spikes still happen, and they're far easier to absorb here than in the traditional model — usually we can accommodate them without a scramble — but a level, expected pace is where a single dedicated operator does their best work.",
     credibility: {
       k: "Backed by",
       v: "ZaUtre",
@@ -315,7 +317,7 @@ const COPY = {
           "Quarterly architecture review",
           "Refactor budget — lowers your run-rate",
         ],
-        cta: "Talk to us",
+        cta: "Join the waiting list",
         feature: true,
       },
       {
@@ -330,7 +332,7 @@ const COPY = {
           "Monthly run-rate review",
           "Optional Stage 02 / Stage 03 expansion",
         ],
-        cta: "Get in touch",
+        cta: "Talk to sales",
         feature: false,
       },
     ],
