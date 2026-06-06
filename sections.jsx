@@ -54,7 +54,7 @@ function Pains() {
             <Reveal key={card.num} className={`pain-card ${card.root ? "root" : ""}`} delay={i * 80}>
               <div className="num">
                 {card.num}
-                {card.root && <span className="root-tag">root cause</span>}
+                {card.root && <span className="root-tag">common thread</span>}
               </div>
               <h3>{card.title}</h3>
               <p className="symptom">{card.symptom}</p>
@@ -114,7 +114,7 @@ function HowItWorks() {
   );
 }
 
-/* ---------------- AGENTS (Persistent Intelligence Layer) ---------------- */
+/* ---------------- AGENTS (always-on intelligence layer) ---------------- */
 function Agents() {
   const c = window.COPY.agents;
   return (

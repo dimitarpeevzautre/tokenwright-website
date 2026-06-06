@@ -17,13 +17,14 @@ const COPY = {
     eyebrow: "Private launch · Salesforce Commerce Cloud",
     h1Lead: "Predictable cadence.\nSenior operators.",
     h1Accent: "Managed Tokens for SFCC.",
-    lede: "A senior operator with instant, deep context on your entire codebase. An estimate grounded in your actual code, back in minutes. Every engagement compounds — the models keep improving, and so does the work.",
+    lede: "The backlog item that's been stuck for months can ship this week. One senior operator, with deep context on your entire codebase, quotes it against your actual code in minutes and delivers a merge-ready PR in days. And because the models keep improving, every engagement gets sharper than the last.",
     primary: "Join the waiting list",
     secondary: "See how Managed Tokens work",
     meta: [
       "Quote in minutes",
       "Merge-ready PR in days",
-      "One senior operator per request",
+      "Tokens map to senior work, not compute",
+      "Firm cap, overruns on us",
     ],
   },
 
@@ -56,12 +57,12 @@ const COPY = {
 
   shift: {
     eyebrow: "The shift",
-    h2: "AI moved the bottleneck. That changes what's possible.",
+    h2: "Code is no longer the slow part. Your roadmap shouldn't be either.",
     paragraphs: [
       "AI didn't just make developers faster. It collapsed the gap between intent and working code — which means the slow part of delivery has moved.",
       "Estimation, planning, and scoping made complete sense when writing code was the slow part. Now that working code comes faster, there's room to spend less time planning and more time shipping.",
       "Most system integrators built their teams and rhythms around that earlier shape of the work — and they're genuinely good at it. Layering a new model on top of an established, well-run practice simply takes time.",
-      "Tokenwright was built for this new shape from day one. AI gives our operators instant, deep context across your entire codebase — the depth that used to take months to accumulate. Seniors handle judgment; the engine handles volume. And because the underlying models improve roughly quarterly, every engagement gets sharper over time — automatically, without renegotiation.",
+      "Tokenwright was built for this new shape from day one. AI gives our operators instant, deep context across your entire codebase — depth that used to take months to accumulate. Seniors handle the judgment; the engine handles the volume. And because the underlying models improve roughly quarterly, every engagement gets sharper, automatically, with no renegotiation.",
     ],
     kicker: "We're not here to replace your SI. We're the velocity layer that sits on top — making the work they already do easier.",
   },
@@ -97,7 +98,7 @@ const COPY = {
   },
 
   agents: {
-    eyebrow: "The Persistent Intelligence Layer",
+    eyebrow: "Always-on intelligence",
     h2: "Your codebase, always understood. Even when you're not spending tokens.",
     sub: "Once you're onboarded, the engine runs continuously. The same understanding that prices your tasks is available to your internal team as a set of agents — included with the subscription, not sold as separate SKUs.",
     cards: [
@@ -316,7 +317,7 @@ const COPY = {
           "Quarterly architecture review",
           "Refactor budget — lowers your run-rate",
         ],
-        cta: "Talk to us",
+        cta: "Join the waiting list",
         feature: true,
       },
       {
@@ -331,7 +332,7 @@ const COPY = {
           "Monthly run-rate review",
           "Optional Stage 02 / Stage 03 expansion",
         ],
-        cta: "Get in touch",
+        cta: "Talk to sales",
         feature: false,
       },
     ],
