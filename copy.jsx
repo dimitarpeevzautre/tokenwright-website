@@ -28,42 +28,42 @@ const COPY = {
   },
 
   pains: {
-    eyebrow: "The diagnosis",
-    h2: "Three pains. One root cause.",
-    sub: "Every slowdown an E-commerce Director runs into traces to the same root: the people writing the code are too many layers away from the merchant who needs it — and carrying too little context about the codebase they're changing.",
+    eyebrow: "Why now",
+    h2: "Three places teams lose time.",
+    sub: "Most E-commerce Directors work with capable teams who genuinely want to ship. Good ideas still wait, though — usually because of distance between the people writing the code and the merchant who needs it, and how much context travels with each request.",
     cards: [
       {
         num: "01",
         title: "Organizational distance",
-        symptom: "The people writing your code are four layers removed from the merchant who needs it.",
-        conseq: "Siloed orgs, diffuse decisions, junior devs shipping work no senior touched.",
+        symptom: "Requests pass through several hands before they reach the developer who builds them.",
+        conseq: "Context thins at each handoff, and the original intent gets harder to trace.",
         root: true,
       },
       {
         num: "02",
-        title: "Agile fatigue",
-        symptom: "Refinement, estimation, planning, scope debate. Weeks of ceremony before a developer touches code.",
-        conseq: "Your roadmap moves at the speed of meetings, not the speed of your business.",
+        title: "Planning overhead",
+        symptom: "Refinement, estimation, planning, scoping — all valuable, but it can add up to weeks before a developer touches code.",
+        conseq: "Your roadmap can end up moving at the speed of meetings rather than the speed of your business.",
       },
       {
         num: "03",
         title: "Context gaps",
-        symptom: "Estimates made without reading your code. Scope built on meeting notes, not the actual repository.",
-        conseq: "It's not a people problem. It's what happens when the person building doesn't have full context before they quote.",
+        symptom: "Estimates are often built from meeting notes rather than a deep read of the actual repository.",
+        conseq: "When full codebase context isn't on hand before a quote, even great teams are working partly from guesswork.",
       },
     ],
   },
 
   shift: {
     eyebrow: "The shift",
-    h2: "Agile is dead. You're paying for ceremonies.",
+    h2: "AI moved the bottleneck. That changes what's possible.",
     paragraphs: [
-      "AI didn't just make developers faster. It collapsed the gap between intent and working code — which means the bottleneck moved.",
-      "Estimation, planning, scoping, debate: the rituals that justified two-week sprints made sense when writing code was the slow part. It isn't anymore.",
-      "Most system integrators were built around that old bottleneck — their org charts, billing models, and sprint rituals were all shaped by it. Pivoting is genuinely hard when the economics depend on the model you're running.",
-      "We were built without that pyramid. AI gives our operators instant, deep context across your entire codebase — the depth that used to take months to accumulate. Seniors handle judgment; the engine handles volume. And because the underlying models improve roughly quarterly, every engagement gets sharper over time — automatically, without renegotiation.",
+      "AI didn't just make developers faster. It collapsed the gap between intent and working code — which means the slow part of delivery has moved.",
+      "Estimation, planning, and scoping made complete sense when writing code was the slow part. Now that working code comes faster, there's room to spend less time planning and more time shipping.",
+      "Most system integrators built their teams and rhythms around that earlier shape of the work — and they're genuinely good at it. Layering a new model on top of an established, well-run practice simply takes time.",
+      "Tokenwright was built for this new shape from day one. AI gives our operators instant, deep context across your entire codebase — the depth that used to take months to accumulate. Seniors handle judgment; the engine handles volume. And because the underlying models improve roughly quarterly, every engagement gets sharper over time — automatically, without renegotiation.",
     ],
-    kicker: "We don't want to replace your SI. We're the velocity layer that sits on top.",
+    kicker: "We're not here to replace your SI. We're the velocity layer that sits on top — making the work they already do easier.",
   },
 
   how: {
