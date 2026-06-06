@@ -242,7 +242,8 @@ const COPY = {
   team: {
     eyebrow: "Who builds this",
     h2: "Senior operators. Full codebase context. Every request, end-to-end.",
-    body: "Tokenwright is staffed entirely by senior SFCC operators with deep experience shipping in production. Each one works with the full codebase context the engine provides — no context loss, no handoff chain, no junior layer between you and the person doing the work. Every Managed Token traces to a named human who reviewed every line.",
+    body: "Tokenwright is staffed entirely by senior SFCC operators with deep experience shipping in production. Each one works with the full codebase context the engine provides — no context loss, no handoff chain, no extra layer between you and the person doing the work. Every Managed Token traces to a named human who reviewed every line.",
+    cadence: "This is also why we talk about cadence. Context-switching costs far less than it used to — the engine keeps your entire codebase loaded, so your operator picks up exactly where they left off. But one operator still carries your whole project: they do the work of a full team and learn how you actually operate. You get the most from that when the load is steady and predictable. Spikes still happen, and they're far easier to absorb here than in the traditional model — usually we can accommodate them without a scramble — but a level, expected pace is where a single dedicated operator does their best work.",
     credibility: {
       k: "Backed by",
       v: "ZaUtre",
