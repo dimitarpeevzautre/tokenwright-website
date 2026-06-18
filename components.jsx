@@ -14,8 +14,7 @@ function scrollToAnchor(id) {
 
 /* ---------------- brand mark ---------------- */
 function BrandMark() {
-  // Editorial mark: a single chrome-yellow bar before the wordmark.
-  return <span className="brand-bar" aria-hidden="true" />;
+  return <img className="brand-mark" src="assets/tokenwright-mark.svg" alt="" width="26" height="26" />;
 }
 
 /* ---------------- top nav ---------------- */
