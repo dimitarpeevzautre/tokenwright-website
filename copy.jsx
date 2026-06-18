@@ -15,7 +15,7 @@ const COPY = {
 
   hero: {
     eyebrow: "Private launch · Salesforce Commerce Cloud",
-    h1Lead: "Predictable cadence.\nSenior operators.",
+    h1Lead: "Senior operators.\nQuoted in minutes.",
     h1Accent: "Managed Tokens for SFCC.",
     lede: "The backlog item that's been stuck for months can ship this week. One senior operator, with deep context on your entire codebase, quotes it against your actual code in minutes and delivers a merge-ready PR in days. And because the models keep improving, every engagement gets sharper than the last.",
     primary: "Join the waiting list",
@@ -70,7 +70,7 @@ const COPY = {
   how: {
     eyebrow: "How it works",
     h2: "Four stages. Every task. Every time.",
-    sub: "From a one-line bug fix to a multi-week feature, the flow is the same. Predictability is part of the product.",
+    sub: "From a one-line bug fix to a multi-week feature, the flow is the same — quoted in minutes, merge-ready PR in days.",
     steps: [
       {
         num: "01",
@@ -244,7 +244,7 @@ const COPY = {
     eyebrow: "Who builds this",
     h2: "Senior operators. Full codebase context. Every request, end-to-end.",
     body: "Tokenwright is staffed entirely by senior SFCC operators with deep experience shipping in production. Each one works with the full codebase context the engine provides — no context loss, no handoff chain, no extra layer between you and the person doing the work. Every Managed Token traces to a named human who reviewed every line.",
-    cadence: "This is also why we talk about cadence. Context-switching costs far less than it used to — the engine keeps your entire codebase loaded, so your operator picks up exactly where they left off. But one operator still carries your whole project: they do the work of a full team and learn how you actually operate. You get the most from that when the load is steady and predictable. Spikes still happen, and they're far easier to absorb here than in the traditional model — usually we can accommodate them without a scramble — but a level, expected pace is where a single dedicated operator does their best work.",
+    cadence: "One operator carrying your whole project sounds like a bottleneck — it isn't. The engine keeps your entire codebase loaded, so there's no context loss between tasks and no handoff chain to slow things down. Your operator picks up exactly where they left off and learns how you actually operate — which is how a single senior person moves at the speed of a team.",
     credibility: {
       k: "Backed by",
       v: "ZaUtre",
@@ -367,7 +367,7 @@ const COPY = {
       { day: "Day 1 – 3",    title: "Init: codebase ingestion",  body: "First paid task. Cartridges mapped, custom vs. base code separated, integration points catalogued, quality signals scored. You receive the State of the Codebase report." },
       { day: "Day 4 – 7",    title: "Code Review",               body: "Second paid task. Quality and risk assessment across the codebase. Surfaces refactor opportunities, test coverage gaps, and quick wins." },
       { day: "Day 7",        title: "Default backlog appears",   body: "Your project auto-populates with quoted, prioritizable tasks: refactor work, test suite build-out, quick wins. You approve task-by-task." },
-      { day: "Day 7 – 14",   title: "First feature PR lands",    body: "Your incumbent SI reviews and deploys on their schedule. From here, cadence is whatever pace you can approve." },
+      { day: "Day 7 – 14",   title: "First feature PR lands",    body: "Your incumbent SI reviews and deploys on their schedule. From here, you ship at whatever pace you can approve." },
     ],
     touchHeading: "What we touch. What we never touch.",
     yes: [
