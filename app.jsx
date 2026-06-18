@@ -15,9 +15,7 @@ function useHashRoute() {
       setRoute(r);
       window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
       if (r.anchor) {
-        setTimeout(() => {
-          document.getElementById(r.anchor)?.scrollIntoView({ behavior: "smooth" });
-        }, 80);
+        setTimeout(() => window.scrollToAnchor(r.anchor), 80);
       }
     };
     window.addEventListener("hashchange", on);

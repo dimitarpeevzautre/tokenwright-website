@@ -1,6 +1,6 @@
 /* Homepage sections for Tokenwright. */
 
-const { useState: useStateS, useEffect: useEffectS } = React;
+const { useState: useStateS } = React;
 
 /* ---------------- HERO ---------------- */
 function Hero() {
@@ -10,30 +10,25 @@ function Hero() {
       <div className="container">
         <div className="grid">
           <div>
-            <Reveal as="div"><Eyebrow>{c.eyebrow}</Eyebrow></Reveal>
-            <Reveal as="h1" delay={60} style={{ marginTop: 24, whiteSpace: "pre-line" }}>
+            <Eyebrow>{c.eyebrow}</Eyebrow>
+            <h1 style={{ whiteSpace: "pre-line" }}>
               {c.h1Lead}{" "}
               <span className="accent">{c.h1Accent}</span>
-            </Reveal>
-            <Reveal as="p" className="lede" delay={140}>{c.lede}</Reveal>
-            <Reveal delay={200} className="ctas">
-              <a href="#waitlist" className="btn btn-primary" onClick={(e) => {
-                e.preventDefault();
-                document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" });
-              }}>
+            </h1>
+            <p className="lede">{c.lede}</p>
+            <div className="ctas">
+              <a href="#waitlist" className="btn btn-primary" onClick={(e) => { e.preventDefault(); scrollToAnchor("waitlist"); }}>
                 {c.primary}<Arrow />
               </a>
-              <a href="#/#how-it-works" className="btn btn-secondary">
-                {c.secondary}
+              <a href="#/#how-it-works" className="btn-link">
+                {c.secondary}<Arrow />
               </a>
-            </Reveal>
-            <Reveal delay={280} className="meta">
+            </div>
+            <div className="meta">
               {c.meta.map((m) => <span key={m}>{m}</span>)}
-            </Reveal>
+            </div>
           </div>
-          <Reveal delay={180} style={{ alignSelf: "stretch" }}>
-            <HeroDiagram />
-          </Reveal>
+          <QuoteTicket />
         </div>
       </div>
     </section>
@@ -46,12 +41,12 @@ function Pains() {
   return (
     <section className="section">
       <div className="container">
-        <Reveal><Eyebrow>{c.eyebrow}</Eyebrow></Reveal>
-        <Reveal as="h2" delay={60} style={{ marginTop: 20, maxWidth: 880 }}>{c.h2}</Reveal>
-        <Reveal as="p" className="lede" delay={120} style={{ marginTop: 20, maxWidth: 720 }}>{c.sub}</Reveal>
+        <Eyebrow>{c.eyebrow}</Eyebrow>
+        <h2 style={{ marginTop: 20, maxWidth: 880 }}>{c.h2}</h2>
+        <p className="lede" style={{ marginTop: 20, maxWidth: 720 }}>{c.sub}</p>
         <div className="pain-grid">
-          {c.cards.map((card, i) => (
-            <Reveal key={card.num} className={`pain-card ${card.root ? "root" : ""}`} delay={i * 80}>
+          {c.cards.map((card) => (
+            <div key={card.num} className="pain-card">
               <div className="num">
                 {card.num}
                 {card.root && <span className="root-tag">common thread</span>}
@@ -59,7 +54,7 @@ function Pains() {
               <h3>{card.title}</h3>
               <p className="symptom">{card.symptom}</p>
               <p className="conseq">{card.conseq}</p>
-            </Reveal>
+            </div>
           ))}
         </div>
       </div>
@@ -73,13 +68,13 @@ function Shift() {
   return (
     <section className="section sunken">
       <div className="container">
-        <Reveal><Eyebrow>{c.eyebrow}</Eyebrow></Reveal>
-        <Reveal as="h2" delay={60} style={{ marginTop: 20, maxWidth: 880, marginBottom: 48 }}>{c.h2}</Reveal>
+        <Eyebrow>{c.eyebrow}</Eyebrow>
+        <h2 style={{ marginTop: 20, maxWidth: 880, marginBottom: 44 }}>{c.h2}</h2>
         <div className="manifesto">
           {c.paragraphs.map((p, i) => (
-            <Reveal as="p" key={i} delay={i * 80}>{p}</Reveal>
+            <p key={i}>{p}</p>
           ))}
-          <Reveal as="span" className="kicker" delay={c.paragraphs.length * 80}>{c.kicker}</Reveal>
+          <span className="kicker">{c.kicker}</span>
         </div>
       </div>
     </section>
@@ -92,21 +87,17 @@ function HowItWorks() {
   return (
     <section className="section" id="how-it-works">
       <div className="container">
-        <Reveal><Eyebrow>{c.eyebrow}</Eyebrow></Reveal>
-        <Reveal as="h2" delay={60} style={{ marginTop: 20, maxWidth: 880 }}>{c.h2}</Reveal>
-        <Reveal as="p" className="lede" delay={120} style={{ marginTop: 20, maxWidth: 720 }}>{c.sub}</Reveal>
+        <Eyebrow>{c.eyebrow}</Eyebrow>
+        <h2 style={{ marginTop: 20, maxWidth: 880 }}>{c.h2}</h2>
+        <p className="lede" style={{ marginTop: 20, maxWidth: 720 }}>{c.sub}</p>
         <div className="stepper four">
-          {c.steps.map((s, i) => (
-            <Reveal
-              key={s.num}
-              className={`step ${s.featured ? "featured" : ""}`}
-              delay={i * 70}
-            >
+          {c.steps.map((s) => (
+            <div key={s.num} className={`step ${s.featured ? "featured" : ""}`}>
               <div className="stepnum">{s.num}</div>
               <h4>{s.label}</h4>
               <p>{s.desc}</p>
               {s.featured && <span className="badge">{s.badge}</span>}
-            </Reveal>
+            </div>
           ))}
         </div>
       </div>
@@ -118,24 +109,24 @@ function HowItWorks() {
 function Agents() {
   const c = window.COPY.agents;
   return (
-    <section className="section ink" id="agents">
+    <section className="section sunken" id="agents">
       <div className="container">
-        <Reveal><Eyebrow>{c.eyebrow}</Eyebrow></Reveal>
-        <Reveal as="h2" delay={60} style={{ marginTop: 20, maxWidth: 880 }}>{c.h2}</Reveal>
-        <Reveal as="p" className="lede" delay={120} style={{ marginTop: 20, maxWidth: 720 }}>{c.sub}</Reveal>
+        <Eyebrow>{c.eyebrow}</Eyebrow>
+        <h2 style={{ marginTop: 20, maxWidth: 880 }}>{c.h2}</h2>
+        <p className="lede" style={{ marginTop: 20, maxWidth: 720 }}>{c.sub}</p>
         <div className="agents-grid">
-          {c.cards.map((a, i) => (
-            <Reveal key={a.name} className={`agent-card ${a.ghost ? "ghost" : ""}`} delay={i * 80}>
+          {c.cards.map((a) => (
+            <div key={a.name} className={`agent-card ${a.ghost ? "ghost" : ""}`}>
               <div className="agent-tag">{a.tag}</div>
               <h3>{a.name}</h3>
               <p>{a.body}</p>
               <ul className="agent-examples">
                 {a.examples.map((ex) => <li key={ex}>{ex}</li>)}
               </ul>
-            </Reveal>
+            </div>
           ))}
         </div>
-        <Reveal as="p" className="agents-foot" delay={300}>{c.foot}</Reveal>
+        <p className="agents-foot">{c.foot}</p>
       </div>
     </section>
   );
@@ -147,20 +138,16 @@ function TokenSection() {
   return (
     <section className="section">
       <div className="container">
-        <Reveal><Eyebrow>{c.eyebrow}</Eyebrow></Reveal>
-        <Reveal as="h2" delay={60} style={{ marginTop: 20, maxWidth: 720 }}>{c.h2}</Reveal>
-        <Reveal className="token-card" delay={120}>
+        <Eyebrow>{c.eyebrow}</Eyebrow>
+        <h2 style={{ marginTop: 20, maxWidth: 720 }}>{c.h2}</h2>
+        <div className="token-card">
           <div>
-            <h3 style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--ink-3)", textTransform: "uppercase", letterSpacing: "0.06em", fontWeight: 500, marginBottom: 20 }}>
-              Definition
-            </h3>
+            <div className="card-label">Definition</div>
             <div className="definition">{c.definition}</div>
             <div className="transparency">{c.transparency}</div>
           </div>
           <div>
-            <h3 style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--ink-3)", textTransform: "uppercase", letterSpacing: "0.06em", fontWeight: 500, marginBottom: 20 }}>
-              Sample sizing
-            </h3>
+            <div className="card-label">Sample sizing</div>
             <ul className="meta-list">
               {c.meta.map((m) => (
                 <li key={m.k}>
@@ -170,7 +157,7 @@ function TokenSection() {
               ))}
             </ul>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );
@@ -180,19 +167,19 @@ function TokenSection() {
 function Expansion() {
   const c = window.COPY.expansion;
   return (
-    <section className="section">
+    <section className="section sunken">
       <div className="container">
-        <Reveal><Eyebrow>{c.eyebrow}</Eyebrow></Reveal>
-        <Reveal as="h2" delay={60} style={{ marginTop: 20, maxWidth: 800 }}>{c.h2}</Reveal>
-        <Reveal as="p" className="lede" delay={120} style={{ marginTop: 20, maxWidth: 640 }}>{c.sub}</Reveal>
+        <Eyebrow>{c.eyebrow}</Eyebrow>
+        <h2 style={{ marginTop: 20, maxWidth: 800 }}>{c.h2}</h2>
+        <p className="lede" style={{ marginTop: 20, maxWidth: 640 }}>{c.sub}</p>
         <div className="expansion-grid">
-          {c.stages.map((s, i) => (
-            <Reveal key={s.n} className={`exp-card ${s.featured ? "featured" : ""}`} delay={i * 100}>
+          {c.stages.map((s) => (
+            <div key={s.n} className={`exp-card ${s.featured ? "featured" : ""}`}>
               <div className="exp-n">{s.n}</div>
               <div className="exp-when">{s.when}</div>
               <h3>{s.title}</h3>
               <p>{s.body}</p>
-            </Reveal>
+            </div>
           ))}
         </div>
       </div>
@@ -226,7 +213,6 @@ function WaitingList() {
     setErrors(errs);
     if (Object.keys(errs).length) return;
 
-    // Fold the SFCC site URL and the optional stuck-item into the operator note.
     const noteParts = [];
     if ((data.site || "").trim()) noteParts.push("SFCC site: " + data.site.trim());
     if ((data.stuck || "").trim()) noteParts.push(data.stuck.trim());
@@ -262,22 +248,22 @@ function WaitingList() {
   };
 
   return (
-    <section className="section sunken" id="waitlist">
+    <section className="section" id="waitlist">
       <div className="container">
-        <Reveal><Eyebrow>{c.eyebrow}</Eyebrow></Reveal>
+        <Eyebrow>{c.eyebrow}</Eyebrow>
         <div className="waitlist-wrap">
           <div>
-            <Reveal as="h2" className="waitlist-h" delay={60}>{c.h1}</Reveal>
-            <Reveal as="p" className="lede" delay={120} style={{ maxWidth: 560, marginTop: 16 }}>{c.sub}</Reveal>
+            <h2 className="waitlist-h">{c.h1}</h2>
+            <p className="lede" style={{ maxWidth: 560, marginTop: 16 }}>{c.sub}</p>
 
-            <Reveal className="cohort-card" delay={180}>
+            <div className="cohort-card">
               <div className="ck">{c.launch.label}</div>
               <div className="cv">{c.launch.value}</div>
               <div className="cm">{c.launch.meta}</div>
               <div className="launch-dot" aria-hidden="true"></div>
-            </Reveal>
+            </div>
 
-            <Reveal as="ol" className="wl-steps" delay={240}>
+            <ol className="wl-steps">
               {c.steps.map((s) => (
                 <li key={s.n}>
                   <span className="n">{s.n}</span>
@@ -286,11 +272,11 @@ function WaitingList() {
                   </span>
                 </li>
               ))}
-            </Reveal>
+            </ol>
           </div>
 
           {sent ? (
-            <Reveal className="form-success" delay={60}>
+            <div className="form-success">
               <div className="check">✓</div>
               <h3>You're on the list.</h3>
               <p>
@@ -303,9 +289,9 @@ function WaitingList() {
                 <div className="receipt-row"><span className="k">Expected admission</span><span className="v">≤ 14 days</span></div>
                 <div className="receipt-row"><span className="k">On admission</span><span className="v">Free starter tokens · Q&A Agent live</span></div>
               </div>
-            </Reveal>
+            </div>
           ) : (
-            <Reveal as="form" className="trial-form" onSubmit={submit} delay={60}>
+            <form className="trial-form" onSubmit={submit}>
               <div className="form-title">{c.form.title}</div>
               <div className="form-sub">{c.form.sub}</div>
               {c.form.fields.map((f) => (
@@ -335,7 +321,7 @@ function WaitingList() {
               </button>
               {formError && <div className="err" style={{ marginTop: 10 }}>{formError}</div>}
               <div className="form-foot">{c.form.foot}</div>
-            </Reveal>
+            </form>
           )}
         </div>
       </div>
@@ -348,22 +334,22 @@ function Objections() {
   const c = window.COPY.objections;
   const [open, setOpen] = useStateS(0);
   return (
-    <section className="section" id="objections">
-      <div className="container">
-        <Reveal><Eyebrow>{c.eyebrow}</Eyebrow></Reveal>
-        <Reveal as="h2" delay={60} style={{ marginTop: 20, maxWidth: 800 }}>{c.h2}</Reveal>
-        <Reveal as="p" className="lede" delay={120} style={{ marginTop: 20, maxWidth: 640 }}>{c.intro}</Reveal>
+    <section className="section sunken" id="objections">
+      <div className="container narrow" style={{ maxWidth: 920 }}>
+        <Eyebrow>{c.eyebrow}</Eyebrow>
+        <h2 style={{ marginTop: 20, maxWidth: 800 }}>{c.h2}</h2>
+        <p className="lede" style={{ marginTop: 20, maxWidth: 640 }}>{c.intro}</p>
         <div className="faq-list">
           {c.faqs.map((f, i) => (
-            <Reveal key={i} className={`faq-item ${open === i ? "open" : ""}`} delay={i * 40}>
+            <div key={i} className={`faq-item ${open === i ? "open" : ""}`}>
               <button className="faq-q" onClick={() => setOpen(open === i ? -1 : i)} aria-expanded={open === i}>
                 <span>{f.q}</span>
-                <span className="toggle">+</span>
+                <span className="toggle">{open === i ? "×" : "+"}</span>
               </button>
               <div className="faq-a">
                 <div className="faq-a-inner">{f.a}</div>
               </div>
-            </Reveal>
+            </div>
           ))}
         </div>
       </div>
@@ -377,14 +363,14 @@ function Team() {
   return (
     <section className="section">
       <div className="container">
-        <Reveal><Eyebrow>{c.eyebrow}</Eyebrow></Reveal>
-        <Reveal as="h2" delay={60} style={{ marginTop: 20, maxWidth: 760 }}>{c.h2}</Reveal>
+        <Eyebrow>{c.eyebrow}</Eyebrow>
+        <h2 style={{ marginTop: 20, maxWidth: 760 }}>{c.h2}</h2>
         <div className="team-block">
           <div>
-            <Reveal as="p" delay={120}>{c.body}</Reveal>
-            {c.cadence && <Reveal as="p" delay={160} style={{ marginTop: 20 }}>{c.cadence}</Reveal>}
+            <p>{c.body}</p>
+            {c.cadence && <p style={{ marginTop: 20 }}>{c.cadence}</p>}
           </div>
-          <Reveal className="credibility-card" delay={180}>
+          <div className="credibility-card">
             <div className="k">{c.credibility.k}</div>
             <div className="v">{c.credibility.v}</div>
             <div className="sub">{c.credibility.sub}</div>
@@ -392,7 +378,7 @@ function Team() {
             <div className="zautre-mention">
               <span className="accent">●</span> tokenwright.zautre.com → Tokenwright (own domain, soon)
             </div>
-          </Reveal>
+          </div>
         </div>
       </div>
     </section>
@@ -405,17 +391,14 @@ function FinalCta() {
   return (
     <section className="section ink final-cta">
       <div className="container">
-        <Reveal><Eyebrow>{c.eyebrow}</Eyebrow></Reveal>
-        <Reveal as="h2" delay={60} style={{ marginTop: 24 }}>{c.h2}</Reveal>
-        <Reveal as="p" className="lede" delay={120}>{c.lede}</Reveal>
-        <Reveal delay={180}>
-          <a href="#waitlist" className="btn btn-primary" onClick={(e) => {
-            e.preventDefault();
-            document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" });
-          }}>
+        <Eyebrow>{c.eyebrow}</Eyebrow>
+        <h2 style={{ marginTop: 24 }}>{c.h2}</h2>
+        <p className="lede">{c.lede}</p>
+        <div>
+          <a href="#waitlist" className="btn btn-primary" onClick={(e) => { e.preventDefault(); scrollToAnchor("waitlist"); }}>
             {c.primary}<Arrow />
           </a>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

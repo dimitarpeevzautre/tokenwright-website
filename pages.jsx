@@ -24,11 +24,12 @@ function PricingPage() {
           <div className="tier-grid">
             {c.tiers.map((t) => (
               <div key={t.name} className={`tier ${t.feature ? "feature" : ""}`}>
+                {t.feature && <div className="feat-tab">Most chosen</div>}
                 <h4>{t.name}</h4>
                 <div className="meta">{t.meta}</div>
                 <div className="price">
                   {t.price}
-                  {t.priceUnit && <span style={{ fontSize: 14, marginLeft: 8, color: "var(--ink-4)", fontFamily: "var(--font-mono)" }}>{t.priceUnit}</span>}
+                  {t.priceUnit && <span style={{ fontFamily: "var(--font-mono)", fontSize: 14, marginLeft: 8, color: "var(--ink-4)" }}>{t.priceUnit}</span>}
                 </div>
                 <ul>
                   {t.bullets.map((b) => <li key={b}>{b}</li>)}
@@ -109,22 +110,12 @@ function HowItWorksPage() {
           <p className="lede" style={{ marginTop: 20, maxWidth: 640 }}>
             Once you're onboarded, the same understanding that prices your tasks is available to your internal team as a set of agents — included with the subscription.
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 16, marginTop: 32 }} className="hwiw-agents">
+          <div className="agents-grid">
             {agents.cards.map((a) => (
-              <div key={a.name} style={{
-                border: "1px solid var(--rule)", borderRadius: 8, padding: 24,
-                background: a.ghost ? "transparent" : "var(--bg-elev)",
-                borderStyle: a.ghost ? "dashed" : "solid",
-              }}>
-                <div style={{
-                  display: "inline-block",
-                  fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em",
-                  textTransform: "uppercase", color: "var(--accent)",
-                  background: "var(--accent-wash)", padding: "3px 8px", borderRadius: 999,
-                  marginBottom: 12,
-                }}>{a.tag}</div>
-                <h4 style={{ fontSize: 18, marginBottom: 8 }}>{a.name}</h4>
-                <p style={{ fontSize: 14, color: "var(--ink-3)" }}>{a.body}</p>
+              <div key={a.name} className={`agent-card ${a.ghost ? "ghost" : ""}`}>
+                <div className="agent-tag">{a.tag}</div>
+                <h3>{a.name}</h3>
+                <p>{a.body}</p>
               </div>
             ))}
           </div>
@@ -135,70 +126,32 @@ function HowItWorksPage() {
 }
 
 function FlowDiagram() {
+  const nodes = [
+    { n: "01", t: "Request",       s: "English brief" },
+    { n: "02", t: "Specification", s: "quote · firm cap", cls: "accent" },
+    { n: "03", t: "Build",         s: "AI + senior operator" },
+    { n: "04", t: "Delivery",      s: "merge-ready PR", cls: "dark" },
+    { n: "↳",  t: "Incumbent SI",  s: "merge · deploy · pager", cls: "ghost" },
+  ];
   return (
-    <div style={{
-      marginTop: 32,
-      border: "1px solid var(--rule-strong)",
-      borderRadius: 8,
-      background: "var(--bg-elev)",
-      padding: 32,
-      overflowX: "auto",
-    }}>
-      <svg viewBox="0 0 980 240" width="100%" style={{ minWidth: 760 }} aria-label="Flow diagram">
-        <defs>
-          <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-            <path d="M0,0 L10,5 L0,10 z" fill="#0F0F0E"/>
-          </marker>
-          <marker id="arrO" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-            <path d="M0,0 L10,5 L0,10 z" fill="#0D9488"/>
-          </marker>
-        </defs>
-
-        {/* nodes */}
-        {[
-          { x: 0,    label: "01 · Request",       sub: "English brief",          fill: "#FAFAF7" },
-          { x: 180,  label: "02 · Specification", sub: "quote · firm cap",       accent: true   },
-          { x: 380,  label: "03 · Build",         sub: "AI + senior operator",   fill: "#FAFAF7" },
-          { x: 580,  label: "04 · Delivery",      sub: "merge-ready PR",         dark: true     },
-          { x: 780,  label: "Incumbent SI",       sub: "merge · deploy · pager", fill: "#FAFAF7", outline: true },
-        ].map((n, i) => (
-          <g key={i}>
-            <rect x={n.x} y={80} width={160} height={80}
-                  fill={n.dark ? "#0F0F0E" : n.accent ? "#D5EFEC" : n.fill}
-                  stroke={n.dark ? "#0F0F0E" : n.accent ? "#0D9488" : n.outline ? "#D6D2C7" : "#D6D2C7"}
-                  strokeDasharray={n.outline ? "4 4" : "0"}
-                  rx="6"/>
-            <text x={n.x + 14} y={112} fontFamily="Instrument Sans, sans-serif" fontSize="14" fontWeight="600"
-                  fill={n.dark ? "#fff" : "#0F0F0E"}>{n.label}</text>
-            <text x={n.x + 14} y={134} fontFamily="JetBrains Mono, monospace" fontSize="11"
-                  fill={n.dark ? "#BFBDB6" : "#5C5C58"}>{n.sub}</text>
-          </g>
+    <div className="flow-diagram">
+      <div className="flow-row">
+        {nodes.map((nd, i) => (
+          <React.Fragment key={nd.t}>
+            {i > 0 && <div className="flow-conn">{i === 4 ? "⇢" : "→"}</div>}
+            <div className={`flow-node ${nd.cls || ""}`}>
+              <div className="fn-n">{nd.n}</div>
+              <div className="fn-t">{nd.t}</div>
+              <div className="fn-s">{nd.s}</div>
+            </div>
+          </React.Fragment>
         ))}
-
-        {/* arrows */}
-        <line x1="160" y1="120" x2="178" y2="120" stroke="#0F0F0E" strokeWidth="1.5" markerEnd="url(#arr)"/>
-        <line x1="340" y1="120" x2="378" y2="120" stroke="#0D9488" strokeWidth="1.5" markerEnd="url(#arrO)"/>
-        <line x1="540" y1="120" x2="578" y2="120" stroke="#0F0F0E" strokeWidth="1.5" markerEnd="url(#arr)"/>
-        <line x1="740" y1="120" x2="778" y2="120" stroke="#5C5C58" strokeWidth="1" strokeDasharray="3 3" markerEnd="url(#arr)"/>
-
-        {/* timing labels */}
-        <text x="178" y="72" fontFamily="JetBrains Mono, monospace" fontSize="11" fill="#0D9488">~ minutes</text>
-        <text x="378" y="72" fontFamily="JetBrains Mono, monospace" fontSize="11" fill="#5C5C58">~ days</text>
-        <text x="578" y="72" fontFamily="JetBrains Mono, monospace" fontSize="11" fill="#5C5C58">PR opens</text>
-        <text x="745" y="72" fontFamily="JetBrains Mono, monospace" fontSize="11" fill="#8F8F89">hand-off</text>
-
-        {/* tokenwright bracket */}
-        <line x1="0"   y1="184" x2="740" y2="184" stroke="#0D9488" strokeWidth="1"/>
-        <line x1="0"   y1="184" x2="0"   y2="190" stroke="#0D9488" strokeWidth="1"/>
-        <line x1="740" y1="184" x2="740" y2="190" stroke="#0D9488" strokeWidth="1"/>
-        <text x="370" y="206" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="11" fill="#0D9488">Tokenwright owns</text>
-
-        {/* incumbent bracket */}
-        <line x1="780" y1="184" x2="940" y2="184" stroke="#8F8F89" strokeWidth="1"/>
-        <line x1="780" y1="184" x2="780" y2="190" stroke="#8F8F89" strokeWidth="1"/>
-        <line x1="940" y1="184" x2="940" y2="190" stroke="#8F8F89" strokeWidth="1"/>
-        <text x="860" y="206" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="11" fill="#8F8F89">your SI owns</text>
-      </svg>
+      </div>
+      <div className="flow-brackets">
+        <div className="bk own" style={{ flex: "4.4" }}>Tokenwright owns</div>
+        <div className="flow-conn" style={{ visibility: "hidden" }}>⇢</div>
+        <div className="bk si" style={{ flex: "1" }}>your SI owns</div>
+      </div>
     </div>
   );
 }
@@ -216,8 +169,10 @@ function OnboardingPage() {
             {c.timeline.map((t, i) => (
               <div key={i} className="row">
                 <div className="day">{t.day}</div>
-                <h4>{t.title}</h4>
-                <p>{t.body}</p>
+                <div>
+                  <h4>{t.title}</h4>
+                  <p>{t.body}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -268,7 +223,7 @@ function ContactPage() {
     <div>
       <PageHero crumb={c.crumb} h1={c.h1} lede={c.lede} />
       <section className="section tight">
-        <div className="container narrow">
+        <div className="container narrow" style={{ maxWidth: 680 }}>
           {sent ? (
             <div className="form-success">
               <div className="check">✓</div>
@@ -281,17 +236,13 @@ function ContactPage() {
               <div className="form-sub">Choose what brings you here. We'll route it appropriately.</div>
 
               <div className="field">
-                <label>Who are you?</label>
-                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                  {["Investor", "Partner", "Press", "Operator (joining us)"].map((k) => (
-                    <button
-                      type="button"
-                      key={k}
-                      onClick={() => set("kind", k)}
-                      className={data.kind === k ? "btn btn-primary btn-sm" : "btn btn-secondary btn-sm"}
-                    >{k}</button>
-                  ))}
-                </div>
+                <label htmlFor="ckind">Who are you?</label>
+                <select id="ckind" value={data.kind} onChange={(e) => set("kind", e.target.value)}>
+                  <option>Partner</option>
+                  <option>Investor</option>
+                  <option>Press</option>
+                  <option>Operator (joining us)</option>
+                </select>
               </div>
 
               <div className="field">

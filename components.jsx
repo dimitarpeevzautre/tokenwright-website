@@ -2,73 +2,71 @@
 
 const { useState, useEffect, useRef } = React;
 
+/* ---------------- anchor scroll (sticky-nav aware) ---------------- */
+// Compute an offset scroll target rather than scrollIntoView, so the sticky
+// 72px nav never covers the section heading.
+function scrollToAnchor(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const top = el.getBoundingClientRect().top + window.pageYOffset - 80;
+  window.scrollTo({ top, behavior: "smooth" });
+}
+
 /* ---------------- brand mark ---------------- */
-function BrandMark({ size = 22 }) {
-  // simple geometric mark: a stamped "T" with a chisel notch — the "wright" hint.
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <rect x="1.5" y="1.5" width="21" height="21" rx="3" stroke="#0F0F0E" strokeWidth="1.5"/>
-      <path d="M6.5 7.5h11" stroke="#0F0F0E" strokeWidth="1.8" strokeLinecap="square"/>
-      <path d="M12 8v9" stroke="#0F0F0E" strokeWidth="1.8" strokeLinecap="square"/>
-      <path d="M14.5 15.5l3 3" stroke="#0D9488" strokeWidth="1.8" strokeLinecap="square"/>
-    </svg>
-  );
+function BrandMark() {
+  // Editorial mark: a single chrome-yellow bar before the wordmark.
+  return <span className="brand-bar" aria-hidden="true" />;
 }
 
 /* ---------------- top nav ---------------- */
-function TopNav({ route, onNav }) {
+function TopNav({ route }) {
   const [open, setOpen] = useState(false);
   const links = [
     { l: "How it works", h: "#/how-it-works" },
-    { l: "Agents",       h: route === "/" ? "#agents" : "#/" },
+    { l: "Agents",       h: "#agents" },
     { l: "Pricing",      h: "#/pricing" },
     { l: "Onboarding",   h: "#/onboarding" },
   ];
-  const click = (e, h) => {
+  const goAnchor = (e, id) => {
     setOpen(false);
-    if (h.startsWith("#/")) return; // hashchange handles route
-    if (h === "#agents" && route === "/") {
+    if (route === "/") {
       e.preventDefault();
-      document.getElementById("agents")?.scrollIntoView({ behavior: "smooth" });
-    } else if (h === "#/" && route !== "/") {
-      // navigate home then scroll
+      scrollToAnchor(id);
+    } else {
       e.preventDefault();
       window.location.hash = "/";
-      setTimeout(() => {
-        document.getElementById("agents")?.scrollIntoView({ behavior: "smooth" });
-      }, 60);
+      setTimeout(() => scrollToAnchor(id), 80);
     }
+  };
+  const click = (e, h) => {
+    setOpen(false);
+    if (h === "#agents") goAnchor(e, "agents");
+    // "#/..." route links are handled by hashchange
   };
   return (
     <header className="topnav">
       <div className="container row">
         <a href="#/" className="brand" onClick={() => setOpen(false)}>
-          <span className="brand-mark"><BrandMark /></span>
+          <BrandMark />
           Tokenwright
         </a>
-        <nav className={open ? "open" : ""}>
-          {links.map((l) => (
-            <a key={l.l} href={l.h} onClick={(e) => click(e, l.h)}>{l.l}</a>
-          ))}
-        </nav>
         <div className="right">
+          <nav className={"nav-links " + (open ? "open" : "")}>
+            {links.map((l) => (
+              <a key={l.l} href={l.h} onClick={(e) => click(e, l.h)}>{l.l}</a>
+            ))}
+          </nav>
           <a className="btn btn-secondary btn-sm" href="https://app.tokenwright.com">Sign in</a>
-          <a className="btn btn-primary btn-sm" href={route === "/" ? "#waitlist" : "#/#waitlist"}
-             onClick={(e) => {
-               if (route === "/") {
-                 e.preventDefault();
-                 document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" });
-               } else {
-                 e.preventDefault();
-                 window.location.hash = "/";
-                 setTimeout(() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" }), 60);
-               }
-             }}>
+          <a
+            className="btn btn-primary btn-sm"
+            href={route === "/" ? "#waitlist" : "#/#waitlist"}
+            onClick={(e) => goAnchor(e, "waitlist")}
+          >
             Join the waiting list
           </a>
-          <button className="menu-btn" aria-label="Menu" onClick={() => setOpen(o => !o)}>
+          <button className="menu-btn" aria-label="Menu" onClick={() => setOpen((o) => !o)}>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d={open ? "M6 6l12 12M6 18L18 6" : "M3 6h18M3 12h18M3 18h18"} strokeLinecap="round"/>
+              <path d={open ? "M6 6l12 12M6 18L18 6" : "M3 6h18M3 12h18M3 18h18"} strokeLinecap="round" />
             </svg>
           </button>
         </div>
@@ -86,10 +84,10 @@ function Foot() {
         <div className="row">
           <div>
             <a href="#/" className="brand" style={{ marginBottom: 14, display: "inline-flex" }}>
-              <span className="brand-mark"><BrandMark /></span>
+              <BrandMark />
               Tokenwright
             </a>
-            <p className="brand-tag" style={{ marginTop: 12 }}>{f.tag}</p>
+            <p className="brand-tag" style={{ marginTop: 14 }}>{f.tag}</p>
           </div>
           {f.cols.map((c) => (
             <div key={c.title}>
@@ -111,37 +109,19 @@ function Foot() {
   );
 }
 
-/* ---------------- reveal-on-scroll wrapper ---------------- */
-function Reveal({ children, delay = 0, as: As = "div", className = "", style, ...rest }) {
-  const ref = useRef(null);
-  const [shown, setShown] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((en) => {
-        if (en.isIntersecting) {
-          setShown(true);
-          io.unobserve(en.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
+/* ---------------- reveal wrapper (motion neutralized) ----------------
+   The editorial redesign uses restrained, hover-only motion — no scroll
+   entrance animations. Kept as a passthrough so call sites are unchanged. */
+function Reveal({ children, delay, as: As = "div", className = "", style, ...rest }) {
+  void delay;
   return (
-    <As
-      ref={ref}
-      className={`reveal ${shown ? "in" : ""} ${className}`}
-      style={{ "--reveal-delay": `${delay}ms`, ...style }}
-      {...rest}
-    >
+    <As className={`reveal ${className}`} style={style} {...rest}>
       {children}
     </As>
   );
 }
 
-/* ---------------- eyebrow label ---------------- */
+/* ---------------- eyebrow label (mono + yellow pip) ---------------- */
 function Eyebrow({ children }) {
   return <div className="eyebrow"><span className="dot" />{children}</div>;
 }
@@ -150,61 +130,34 @@ function Eyebrow({ children }) {
 function Arrow({ size = 14 }) {
   return (
     <svg className="arrow" width={size} height={size} viewBox="0 0 16 16" fill="none" aria-hidden="true">
-      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="square" fill="none"/>
+      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="square" fill="none" />
     </svg>
   );
 }
 
-/* ---------------- hero diagram (4-stage task flow) ---------------- */
-function HeroDiagram() {
-  const [tick, setTick] = useState(0);
-  useEffect(() => {
-    const id = setInterval(() => setTick(t => (t + 1) % 3), 2200);
-    return () => clearInterval(id);
-  }, []);
+/* ---------------- hero quote ticket ---------------- */
+function QuoteTicket() {
   return (
-    <div className="hero-diagram" aria-hidden="true">
-      <div className="label">
-        <span>task.flow</span>
-        <span style={{ color: "var(--accent)" }}>● private launch</span>
+    <div className="quote-ticket" aria-hidden="true">
+      <div className="qt-head">
+        <span className="lbl">Specification · quote</span>
+        <span className="qt-pill">quoted in 04:11</span>
       </div>
-
-      <div className="node in">
-        <span><span style={{ color: "var(--ink-4)" }}>01</span> request</span>
-        <span className="t">English ↓</span>
-      </div>
-      <div style={{ paddingLeft: 38, fontSize: 12, color: "var(--ink-3)", margin: "4px 0 10px" }}>
-        "Add Apple Pay to checkout."
-      </div>
-
-      <div className="arrow-down">↓</div>
-
-      <div className="node">
-        <span><span style={{ color: "var(--ink-4)" }}>02</span> specification</span>
-        <span className="t">~120 tokens · firm cap</span>
-      </div>
-      <div className="arrow-down">↓</div>
-
-      <div className="node">
-        <span><span style={{ color: "var(--ink-4)" }}>03</span> build</span>
-        <span className="t">named operator</span>
-      </div>
-      <div className="arrow-down">↓</div>
-
-      <div className="node out">
-        <span><span style={{ color: "#8F8F89" }}>04</span> delivery</span>
-        <span className="t">merge-ready PR</span>
-      </div>
-
-      <div className="quote-pill">{tick === 0 ? "00:42s" : tick === 1 ? "01:18s" : "02:04s"} to quote</div>
+      <div className="qt-request">"Add Apple Pay to checkout, including international storefronts."</div>
+      <div className="qt-line"><span>Scope &amp; specification</span><span className="v">18</span></div>
+      <div className="qt-line"><span>Implementation</span><span className="v">64</span></div>
+      <div className="qt-line"><span>Test coverage</span><span className="v">26</span></div>
+      <div className="qt-line"><span>Senior operator review</span><span className="v">12</span></div>
+      <div className="qt-total"><span>Quoted total</span><span className="v">120 · firm cap</span></div>
     </div>
   );
 }
 
+window.scrollToAnchor = scrollToAnchor;
 window.BrandMark = BrandMark;
 window.TopNav = TopNav;
 window.Foot = Foot;
 window.Reveal = Reveal;
 window.Eyebrow = Eyebrow;
 window.Arrow = Arrow;
-window.HeroDiagram = HeroDiagram;
+window.QuoteTicket = QuoteTicket;
