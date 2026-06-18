@@ -52,6 +52,7 @@ function TopNav({ route, onNav }) {
           ))}
         </nav>
         <div className="right">
+          <a className="btn btn-secondary btn-sm" href="https://app.tokenwright.com">Sign in</a>
           <a className="btn btn-primary btn-sm" href={route === "/" ? "#waitlist" : "#/#waitlist"}
              onClick={(e) => {
                if (route === "/") {

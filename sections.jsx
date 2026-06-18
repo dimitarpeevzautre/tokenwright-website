@@ -206,10 +206,15 @@ function WaitingList() {
   const [data, setData] = useStateS({});
   const [errors, setErrors] = useStateS({});
   const [sent, setSent] = useStateS(false);
+  const [submitting, setSubmitting] = useStateS(false);
+  const [formError, setFormError] = useStateS("");
 
   const set = (n, v) => setData((d) => ({ ...d, [n]: v }));
 
-  const submit = (e) => {
+  // Posts a real access request to the app (invite-only onboarding): an operator
+  // reviews and approves it. Cross-origin to app.tokenwright.com — the endpoint
+  // is public and needs no credentials.
+  const submit = async (e) => {
     e.preventDefault();
     const errs = {};
     c.form.fields.forEach((f) => {
@@ -220,14 +225,40 @@ function WaitingList() {
     });
     setErrors(errs);
     if (Object.keys(errs).length) return;
-    // TODO: wire to backend
-    setSent(true);
-  };
 
-  // a stable-looking "queue position" based on a simple hash of email so it doesn't churn on re-renders
-  const queuePos = () => {
-    const seed = (data.email || "anon").length * 7 + (data.company || "").length * 3;
-    return 240 + (seed % 80); // 240–319
+    // Fold the SFCC site URL and the optional stuck-item into the operator note.
+    const noteParts = [];
+    if ((data.site || "").trim()) noteParts.push("SFCC site: " + data.site.trim());
+    if ((data.stuck || "").trim()) noteParts.push(data.stuck.trim());
+
+    setSubmitting(true);
+    setFormError("");
+    try {
+      const res = await fetch("https://app.tokenwright.com/api/registrations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: (data.name || "").trim(),
+          email: (data.email || "").trim(),
+          company: (data.company || "").trim(),
+          note: noteParts.join("\n\n"),
+        }),
+      });
+      if (res.status === 409) {
+        setFormError("That email already has access — sign in instead.");
+        return;
+      }
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        setFormError((body.error && body.error.message) || "Something went wrong — please try again.");
+        return;
+      }
+      setSent(true);
+    } catch (err) {
+      setFormError("Couldn't reach the server — check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -267,7 +298,7 @@ function WaitingList() {
                 Once you're in, your free starter tokens are immediately available.
               </p>
               <div className="receipt">
-                <div className="receipt-row"><span className="k">Position</span><span className="v">#{queuePos()}</span></div>
+                <div className="receipt-row"><span className="k">Status</span><span className="v">Received · pending review</span></div>
                 <div className="receipt-row"><span className="k">Stage</span><span className="v">Private launch · admitting by hand</span></div>
                 <div className="receipt-row"><span className="k">Expected admission</span><span className="v">≤ 14 days</span></div>
                 <div className="receipt-row"><span className="k">On admission</span><span className="v">Free starter tokens · Q&A Agent live</span></div>
@@ -299,9 +330,10 @@ function WaitingList() {
                   {errors[f.name] && <div className="err">{errors[f.name]}</div>}
                 </div>
               ))}
-              <button type="submit" className="btn btn-primary">
-                {c.form.submit}<Arrow />
+              <button type="submit" className="btn btn-primary" disabled={submitting}>
+                {submitting ? "Sending…" : c.form.submit}<Arrow />
               </button>
+              {formError && <div className="err" style={{ marginTop: 10 }}>{formError}</div>}
               <div className="form-foot">{c.form.foot}</div>
             </Reveal>
           )}
