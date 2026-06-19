@@ -27,14 +27,13 @@ function PricingPage() {
                 {t.feature && <div className="feat-tab">Most chosen</div>}
                 <h4>{t.name}</h4>
                 <div className="meta">{t.meta}</div>
-                <div className="price">
-                  {t.price}
-                  {t.priceUnit && <span style={{ fontFamily: "var(--font-mono)", fontSize: 14, marginLeft: 8, color: "var(--ink-4)" }}>{t.priceUnit}</span>}
-                </div>
+                <div className="price">{t.value}</div>
+                <div className="price-sub">{t.priceLine}</div>
+                <p className="tier-note">{t.note}</p>
                 <ul>
                   {t.bullets.map((b) => <li key={b}>{b}</li>)}
                 </ul>
-                <a className={`btn ${t.feature ? "btn-primary" : "btn-secondary"}`} href={t.name === "Block" ? "#/#waitlist" : "#/contact"}>
+                <a className={`btn ${t.feature ? "btn-primary" : "btn-secondary"}`} href={t.contact ? "#/contact" : "#/#waitlist"}>
                   {t.cta}<Arrow />
                 </a>
               </div>
@@ -59,6 +58,7 @@ function PricingPage() {
               <span>{c.sample.total.k}</span>
               <span className="v">{c.sample.total.v}</span>
             </div>
+            {c.sample.compare && <div className="compare">{c.sample.compare}</div>}
           </div>
           <p style={{ marginTop: 32, maxWidth: 720, fontSize: 14, color: "var(--ink-3)" }}>{c.transparency}</p>
         </div>
