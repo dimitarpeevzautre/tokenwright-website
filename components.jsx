@@ -14,7 +14,7 @@ function scrollToAnchor(id) {
 
 /* ---------------- brand mark ---------------- */
 function BrandMark() {
-  return <img className="brand-mark" src="assets/tokenwright-mark.svg" alt="" width="26" height="26" />;
+  return <img className="brand-mark" src="assets/tokenwright-mark.svg" alt="" width="36" height="26" />;
 }
 
 /* ---------------- top nav ---------------- */

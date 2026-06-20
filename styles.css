@@ -138,7 +138,7 @@ p { margin: 0; color: var(--ink-2); font-family: var(--font-body); text-wrap: pr
   color: var(--ink);
 }
 .brand-mark {
-  width: 26px; height: 26px;
+  height: 26px; width: auto;
   display: block;
   flex-shrink: 0;
 }
