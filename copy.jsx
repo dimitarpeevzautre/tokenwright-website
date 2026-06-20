@@ -23,7 +23,7 @@ const COPY = {
     meta: [
       "Quote in minutes",
       "Merge-ready PR in days",
-      "Tokens map to senior work, not compute",
+      "Priced on outcomes, not hours or compute",
       "Firm cap, overruns on us",
     ],
   },
@@ -140,13 +140,13 @@ const COPY = {
   token: {
     eyebrow: "The unit",
     h2: "What a Managed Token actually is.",
-    definition: "A Managed Token is a small, fixed unit of senior SFCC delivery capacity — and the unit you spend. Each token reflects the AI context and generation work, the senior operator's review and architectural judgment, the liability we carry for what we ship, and the integration effort to deliver a merge-ready pull request. Every plan includes a monthly balance; you spend it on the tasks you approve.",
+    definition: "A Managed Token is a small, fixed unit of delivered SFCC work — and the unit you spend. The agents do the building; each token is priced on the value of what ships — a merge-ready pull request — plus the senior judgment that directs and reviews them and the liability we carry for what we ship. Every plan includes a monthly balance; you spend it on the tasks you approve.",
     meta: [
       { k: "Small feature",                  v: "200 – 700 tokens",    accent: false },
       { k: "Mid-size merchant, typical mo.", v: "1,300 – 4,200 tokens",accent: false },
       { k: "Hard monthly cap",               v: "Firm. Always.",       accent: true  },
     ],
-    transparency: "Transparency floor: the majority of any quote reflects human expertise, integration, and the guarantee — not raw AI infrastructure cost. We publish this commitment so you can hold us to it.",
+    transparency: "Why a token costs a fraction of traditional delivery: the agents do the heavy lifting, so senior time per outcome is small. You're priced on the value of what ships — a merge-ready PR — and the senior judgment that directs and verifies it, never a meter of hours or compute.",
   },
 
   expansion: {
@@ -365,7 +365,7 @@ const COPY = {
       total: { k: "Quoted total", v: "576 tokens · firm cap" },
       compare: "≈ €1,800 delivered. The same scope runs ~€7,500 with an in-house or agency team.",
     },
-    transparency: "Transparency floor: the majority of every quote reflects human expertise, integration, and the guarantee — not raw AI infrastructure cost. The split above is illustrative; every quote we send breaks down the same way.",
+    transparency: "What you're paying for: the agents do the building — which is exactly why a quote lands at a fraction of in-house cost. The price reflects the senior SFCC judgment that directs and reviews them, the integration to a merge-ready PR, and the firm cap that puts overrun risk on us — the value delivered, not a tally of hours or compute. The split above is illustrative; every quote breaks down the same way.",
   },
 
   howItWorksPage: {
