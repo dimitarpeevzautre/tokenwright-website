@@ -152,11 +152,18 @@ p { margin: 0; color: var(--ink-2); font-family: var(--font-body); text-wrap: pr
 }
 .topnav .nav-links a:hover, .topnav .nav-links a.active { color: var(--ink); }
 .menu-btn { display: none; background: none; border: none; padding: 6px; color: var(--ink); }
+/* CTA that lives inside the mobile dropdown — hidden on desktop.
+   Scoped to .topnav so it beats the later, equal-specificity .btn rule. */
+.topnav .nav-menu-cta { display: none; }
 
 @media (max-width: 820px) {
   .topnav .row { height: 62px; }
   .topnav .nav-links { display: none; }
   .menu-btn { display: inline-flex; }
+  /* On mobile the bar shows only the brand + menu; CTAs move into the dropdown
+     and "Sign in" is dropped entirely. */
+  .topnav .nav-bar-cta { display: none; }
+  .topnav .right { gap: 8px; }
   .topnav .nav-links.open {
     display: flex; flex-direction: column; align-items: flex-start;
     position: absolute; top: 62px; left: 0; right: 0;
@@ -164,6 +171,9 @@ p { margin: 0; color: var(--ink-2); font-family: var(--font-body); text-wrap: pr
     border-bottom: 1px solid var(--rule);
     padding: 16px 22px 24px;
     gap: 16px;
+  }
+  .topnav .nav-links.open .nav-menu-cta {
+    display: inline-flex; width: 100%; margin-top: 6px;
   }
 }
 

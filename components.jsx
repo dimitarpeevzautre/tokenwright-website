@@ -54,10 +54,18 @@ function TopNav({ route }) {
             {links.map((l) => (
               <a key={l.l} href={l.h} onClick={(e) => click(e, l.h)}>{l.l}</a>
             ))}
+            {/* CTA shown inside the dropdown on mobile (the bar buttons are hidden there) */}
+            <a
+              className="btn btn-primary btn-sm nav-menu-cta"
+              href={route === "/" ? "#waitlist" : "#/#waitlist"}
+              onClick={(e) => goAnchor(e, "waitlist")}
+            >
+              Join the waiting list
+            </a>
           </nav>
-          <a className="btn btn-secondary btn-sm" href="https://app.tokenwright.com">Sign in</a>
+          <a className="btn btn-secondary btn-sm nav-bar-cta" href="https://app.tokenwright.com">Sign in</a>
           <a
-            className="btn btn-primary btn-sm"
+            className="btn btn-primary btn-sm nav-bar-cta"
             href={route === "/" ? "#waitlist" : "#/#waitlist"}
             onClick={(e) => goAnchor(e, "waitlist")}
           >
