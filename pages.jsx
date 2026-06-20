@@ -126,7 +126,7 @@ function HowItWorksPage() {
           <Eyebrow>{agents.eyebrow}</Eyebrow>
           <h2 style={{ marginTop: 20, maxWidth: 760 }}>The engine runs even when you're not spending tokens.</h2>
           <p className="lede" style={{ marginTop: 20, maxWidth: 640 }}>
-            Once you're onboarded, the same understanding that prices your tasks is available to your internal team as a set of agents — included with the subscription.
+            Once you're onboarded, the same understanding that prices your tasks is available to your internal team as a set of agents — part of the engine, never separate products to buy.
           </p>
           <div className="agents-grid">
             {agents.cards.map((a) => (

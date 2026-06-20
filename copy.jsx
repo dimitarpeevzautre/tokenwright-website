@@ -100,7 +100,7 @@ const COPY = {
   agents: {
     eyebrow: "Always-on intelligence",
     h2: "Your codebase, always understood. Even when you're not spending tokens.",
-    sub: "Once you're onboarded, the engine runs continuously. The same understanding that prices your tasks is available to your internal team as a set of agents — included with the subscription, not sold as separate SKUs.",
+    sub: "Once you're onboarded, the engine runs continuously. The same understanding that prices your tasks is available to your internal team as a set of agents — part of the engine, never separate products to buy.",
     cards: [
       {
         tag: "Available now",
@@ -134,7 +134,7 @@ const COPY = {
         ghost: true,
       },
     ],
-    foot: "Agents exist to make your team faster — not to extract more tokens. The better they work, the more you trust the engine that runs the paid task flow.",
+    foot: "Q&A and Monitor are included — ask and watch all you want, no tokens spent. The agents that do real work on your behalf spend tokens like any task, because the value they deliver is worth it. You only ever spend on outcomes you approve.",
   },
 
   token: {
