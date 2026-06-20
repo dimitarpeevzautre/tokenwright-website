@@ -142,9 +142,9 @@ const COPY = {
     h2: "What a Managed Token actually is.",
     definition: "A Managed Token is a small, fixed unit of delivered SFCC work — and the unit you spend. The agents do the building; each token is priced on the value of what ships — a merge-ready pull request — plus the senior judgment that directs and reviews them and the liability we carry for what we ship. Every plan includes a monthly balance; you spend it on the tasks you approve.",
     meta: [
-      { k: "Small feature",                  v: "200 – 700 tokens",    accent: false },
-      { k: "Mid-size merchant, typical mo.", v: "1,300 – 4,200 tokens",accent: false },
-      { k: "Hard monthly cap",               v: "Firm. Always.",       accent: true  },
+      { k: "Small feature or fix", v: "80 – 150 tokens",   accent: false },
+      { k: "Mid-size feature",     v: "300 – 700 tokens",  accent: false },
+      { k: "Hard monthly cap",     v: "Firm. Always.",     accent: true  },
     ],
     transparency: "Why a token costs a fraction of traditional delivery: the agents do the heavy lifting, so senior time per outcome is small. You're priced on the value of what ships — a merge-ready PR — and the senior judgment that directs and verifies it, never a meter of hours or compute.",
   },
@@ -183,11 +183,11 @@ const COPY = {
     launch: {
       label: "Where we are",
       value: "Private launch",
-      meta: "Small batches, by hand. Two weeks from signup to admission, typical.",
+      meta: "Reviewed by hand. Two weeks from signup to admission, typical.",
     },
     steps: [
       { n: "01", t: "Sign up.",                d: "One click. No SOW. No sales call." },
-      { n: "02", t: "Admitted in the next batch.", d: "Capacity-controlled. Position visible from your dashboard." },
+      { n: "02", t: "Reviewed and admitted by hand.", d: "Capacity-controlled. We email you the moment you're in." },
       { n: "03", t: "Free starter tokens.",    d: "Explore the engine on your real code. Ask the Q&A Agent. Get a quote on a real backlog item." },
       { n: "04", t: "Activate your plan.",     d: "Pick a monthly tier; its token balance is live the same day. Spend it on tasks as you approve them. Credit card or PO." },
       { n: "05", t: "Init + Code Review.",     d: "Your first paid tasks. State of the Codebase report + quality and risk assessment." },
@@ -195,7 +195,7 @@ const COPY = {
     ],
     form: {
       title: "Reserve your spot",
-      sub: "Frictionless signup. We'll email you when your batch is admitted.",
+      sub: "Frictionless signup. We'll email you the moment you're admitted.",
       fields: [
         { name: "name",    label: "Your name",     type: "text",  placeholder: "Jane Park" },
         { name: "email",   label: "Work email",    type: "email", placeholder: "jane@retailer.com" },
@@ -346,7 +346,7 @@ const COPY = {
       eyebrow: "How tokens work",
       h2: "Tokens are the unit you spend.",
       steps: [
-        { n: "01", t: "Your plan includes a monthly token balance.", d: "Standard starts at 480 tokens a month. One token is a small, fixed unit of senior delivery — granular enough to price a one-line fix or a multi-week feature." },
+        { n: "01", t: "Your plan includes a monthly token balance.", d: "Standard's 480 tokens cover about four or five small features a month — roughly 80–150 tokens each. Mid-size features draw more; the Apple Pay quote below comes to 576." },
         { n: "02", t: "Submit a task, get a token quote in minutes.", d: "An agent scopes the work against your actual codebase and returns a firm token price before anything starts. Quoted in minutes, not weeks." },
         { n: "03", t: "Approve, then spend from your balance.", d: "Tokens are only deducted on tasks you approve. Nothing moves without your sign-off, and every quote breaks down where the tokens go." },
         { n: "04", t: "The cap is firm — overruns are on us.", d: "If a task runs past its quote, we absorb the difference. You are never billed above the cap, full stop." },
@@ -379,8 +379,8 @@ const COPY = {
     h1: "Your first two weeks with Tokenwright.",
     lede: "Onboarding is a product surface, not a consulting engagement. From admission to your first merge-ready PR — typically under fourteen days.",
     timeline: [
-      { day: "Sign up",      title: "Frictionless registration", body: "One click. No SOW. No sales call. You join the waiting list and see your batch position from your dashboard." },
-      { day: "Admission",    title: "Admission",                  body: "We admit in small batches by hand. When your spot is up, you receive free starter tokens and access to the dashboard, the Q&A Agent, and the quote engine." },
+      { day: "Sign up",      title: "Frictionless registration", body: "One click. No SOW. No sales call. You join the waiting list, and we email you the moment you're admitted." },
+      { day: "Admission",    title: "Admission",                  body: "We review and admit by hand. When your spot is up, you receive free starter tokens and access to the dashboard, the Q&A Agent, and the quote engine." },
       { day: "Connect",      title: "Sandbox or repo access",    body: "You point us at a sandbox/dev instance (preferred — lets the engine verify behavior) or grant read-only repository access. Takes minutes, not days. No production access required." },
       { day: "Day 1 – 3",    title: "Init: codebase ingestion",  body: "First paid task. Cartridges mapped, custom vs. base code separated, integration points catalogued, quality signals scored. You receive the State of the Codebase report." },
       { day: "Day 4 – 7",    title: "Code Review",               body: "Second paid task. Quality and risk assessment across the codebase. Surfaces refactor opportunities, test coverage gaps, and quick wins." },
