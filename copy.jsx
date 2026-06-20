@@ -115,7 +115,7 @@ const COPY = {
       {
         tag: "Available now",
         name: "Monitor Agent",
-        body: "Watches your environments for errors, anomalies, performance regressions, and security signals. Catches problems before your retailer notices. Auto-fixes the safe ones; surfaces the rest as quote-ready remediation tasks.",
+        body: "Watches your environments for errors, anomalies, performance regressions, and security signals. Catches issues before they become problems. Auto-fixes the safe ones; surfaces the rest as quote-ready remediation tasks.",
         examples: [
           "Error rate spike, /cart route",
           "Slow query, loyalty_balance.ds",
