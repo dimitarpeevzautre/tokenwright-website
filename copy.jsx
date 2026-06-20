@@ -125,7 +125,7 @@ const COPY = {
       {
         tag: "On the roadmap",
         name: "Future agents",
-        body: "Every new agent becomes available to existing subscribers without renegotiation. A Best Practices Reviewer, a Data Consistency Checker, a Security Auditor — all in scope as we ship them.",
+        body: "We ship new agents continuously — each a new, automated way to keep your storefront sharper. Every one reaches existing subscribers without renegotiation, the moment it's ready.",
         examples: [
           "Best Practices Reviewer",
           "Data Consistency Checker",
