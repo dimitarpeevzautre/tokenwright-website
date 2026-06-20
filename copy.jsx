@@ -140,10 +140,10 @@ const COPY = {
   token: {
     eyebrow: "The unit",
     h2: "What a Managed Token actually is.",
-    definition: "A Managed Token is a composite unit of senior SFCC delivery capacity. Each token reflects the AI context and generation work, the senior operator's review and architectural judgment, the liability we carry for what we ship, and the integration effort to deliver a merge-ready pull request.",
+    definition: "A Managed Token is a small, fixed unit of senior SFCC delivery capacity — and the unit you spend. Each token reflects the AI context and generation work, the senior operator's review and architectural judgment, the liability we carry for what we ship, and the integration effort to deliver a merge-ready pull request. Every plan includes a monthly balance; you spend it on the tasks you approve.",
     meta: [
-      { k: "Small feature",                  v: "50 – 150 tokens",     accent: false },
-      { k: "Mid-size merchant, typical mo.", v: "2,000 – 5,000 tokens",accent: false },
+      { k: "Small feature",                  v: "200 – 700 tokens",    accent: false },
+      { k: "Mid-size merchant, typical mo.", v: "1,300 – 4,200 tokens",accent: false },
       { k: "Hard monthly cap",               v: "Firm. Always.",       accent: true  },
     ],
     transparency: "Transparency floor: the majority of any quote reflects human expertise, integration, and the guarantee — not raw AI infrastructure cost. We publish this commitment so you can hold us to it.",
@@ -189,7 +189,7 @@ const COPY = {
       { n: "01", t: "Sign up.",                d: "One click. No SOW. No sales call." },
       { n: "02", t: "Admitted in the next batch.", d: "Capacity-controlled. Position visible from your dashboard." },
       { n: "03", t: "Free starter tokens.",    d: "Explore the engine on your real code. Ask the Q&A Agent. Get a quote on a real backlog item." },
-      { n: "04", t: "Buy your first block.",   d: "One-time or monthly. Any size. Credit card or PO. No minimum commitment." },
+      { n: "04", t: "Activate your plan.",     d: "Pick a monthly tier; its token balance is live the same day. Spend it on tasks as you approve them. Credit card or PO." },
       { n: "05", t: "Init + Code Review.",     d: "Your first paid tasks. State of the Codebase report + quality and risk assessment." },
       { n: "06", t: "Default backlog appears.", d: "Refactor tasks, quick wins, test suite scope — all pre-quoted in your project, ready to approve." },
     ],
@@ -219,7 +219,7 @@ const COPY = {
       },
       {
         q: "How does billing actually work?",
-        a: "Two options. Buy a one-time token block (any size, no commitment), or subscribe to a monthly tier with a hard cap. No tokens are deducted until your designated approver signs off on the quote. The cap is the maximum you can be billed in any month — period. Credit card or PO; whichever your procurement prefers.",
+        a: "Each monthly plan includes a token balance — the unit you spend on tasks. You submit a task, an agent returns a firm token quote in minutes, and tokens are only deducted once your designated approver signs off. The quote cap is firm: if the work runs over, the overrun is on us. Unused tokens expire at the end of each billing month — they don't roll over. If a heavy month needs more, you can top up at any time. Credit card or PO; whichever your procurement prefers.",
       },
       {
         q: "What about security and code access?",
@@ -288,14 +288,15 @@ const COPY = {
   pricing: {
     crumb: "Pricing",
     h1: "Senior delivery, at a fraction of in-house cost.",
-    lede: "Every plan buys real engineering capacity for roughly a quarter of what an agency or an in-house hire would bill. You spend tokens on tasks — and the cap on every quote is firm, so overruns are on us, not you.",
+    lede: "Every plan includes a monthly balance of tokens — the unit you spend on tasks — for roughly a quarter of what an agency or in-house team would bill. Quotes come back in minutes, and the cap on every quote is firm: overruns are on us, not you.",
     tiers: [
       {
         name: "Standard",
-        meta: "Replaces a senior developer",
+        meta: "A senior operator's output on your roadmap",
         value: "~75% less",
         priceLine: "than in-house · €1,500 / mo",
-        note: "A dedicated senior operator delivering merge-ready PRs on your roadmap — output an agency would bill at roughly €6,000.",
+        tokens: "480 tokens / month",
+        note: "Senior-operator output delivering merge-ready PRs on your roadmap — work an agency would bill at roughly €6,000.",
         bullets: [
           "Quoted in minutes, not weeks",
           "Firm token cap — overruns are on us",
@@ -308,9 +309,10 @@ const COPY = {
       },
       {
         name: "Growth",
-        meta: "Replaces a small delivery team",
+        meta: "A small delivery team's throughput",
         value: "~77% less",
         priceLine: "than in-house · €4,200 / mo",
+        tokens: "1,344 tokens / month",
         note: "Three times the throughput for teams shipping continuously — around €18,000 of agency delivery, priced at a fraction.",
         bullets: [
           "Everything in Standard",
@@ -324,9 +326,10 @@ const COPY = {
       },
       {
         name: "Enterprise",
-        meta: "Replaces a full SFCC squad",
+        meta: "A full SFCC squad's output across storefronts",
         value: "~78% less",
         priceLine: "than in-house · €13,000 / mo",
+        tokens: "4,160 tokens / month",
         note: "A full squad's output across storefronts and teams — about €60,000 of agency delivery, embedded with your platform team.",
         bullets: [
           "Everything in Growth",
@@ -339,16 +342,27 @@ const COPY = {
         contact: true,
       },
     ],
+    howTokens: {
+      eyebrow: "How tokens work",
+      h2: "Tokens are the unit you spend.",
+      steps: [
+        { n: "01", t: "Your plan includes a monthly token balance.", d: "Standard starts at 480 tokens a month. One token is a small, fixed unit of senior delivery — granular enough to price a one-line fix or a multi-week feature." },
+        { n: "02", t: "Submit a task, get a token quote in minutes.", d: "An agent scopes the work against your actual codebase and returns a firm token price before anything starts. Quoted in minutes, not weeks." },
+        { n: "03", t: "Approve, then spend from your balance.", d: "Tokens are only deducted on tasks you approve. Nothing moves without your sign-off, and every quote breaks down where the tokens go." },
+        { n: "04", t: "The cap is firm — overruns are on us.", d: "If a task runs past its quote, we absorb the difference. You are never billed above the cap, full stop." },
+      ],
+      rollover: "Tokens reset monthly. Unused tokens expire at the end of your billing month — they don't roll over, so your balance always reflects the month ahead, never a backlog of credit.",
+    },
     sampleHeading: "What a quote actually looks like",
     sample: {
       request: "Add Apple Pay to checkout, including international storefronts and the existing wallet test suite.",
       lines: [
-        { k: "AI context + generation",     v: "32 tokens" },
-        { k: "Senior operator review",       v: "48 tokens" },
-        { k: "Integration & PR effort",      v: "26 tokens" },
-        { k: "Liability & guarantee",        v: "14 tokens" },
+        { k: "AI context + generation",     v: "144 tokens" },
+        { k: "Senior operator review",       v: "240 tokens" },
+        { k: "Integration & PR effort",      v: "120 tokens" },
+        { k: "Liability & guarantee",        v: "72 tokens" },
       ],
-      total: { k: "Quoted total", v: "120 tokens · firm cap" },
+      total: { k: "Quoted total", v: "576 tokens · firm cap" },
       compare: "≈ €1,800 delivered. The same scope runs ~€7,500 with an in-house or agency team.",
     },
     transparency: "Transparency floor: the majority of every quote reflects human expertise, integration, and the guarantee — not raw AI infrastructure cost. The split above is illustrative; every quote we send breaks down the same way.",

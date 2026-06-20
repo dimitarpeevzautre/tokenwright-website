@@ -29,6 +29,7 @@ function PricingPage() {
                 <div className="meta">{t.meta}</div>
                 <div className="price">{t.value}</div>
                 <div className="price-sub">{t.priceLine}</div>
+                <div className="tier-tokens"><span className="dot" />{t.tokens}</div>
                 <p className="tier-note">{t.note}</p>
                 <ul>
                   {t.bullets.map((b) => <li key={b}>{b}</li>)}
@@ -39,6 +40,23 @@ function PricingPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section tight">
+        <div className="container">
+          <Eyebrow>{c.howTokens.eyebrow}</Eyebrow>
+          <h2 style={{ marginTop: 20, maxWidth: 720 }}>{c.howTokens.h2}</h2>
+          <div className="stepper four" style={{ marginTop: 32 }}>
+            {c.howTokens.steps.map((s) => (
+              <div key={s.n} className="step">
+                <div className="stepnum">{s.n}</div>
+                <h4>{s.t}</h4>
+                <p>{s.d}</p>
+              </div>
+            ))}
+          </div>
+          <p style={{ marginTop: 32, maxWidth: 720, fontSize: 14, color: "var(--ink-3)" }}>{c.howTokens.rollover}</p>
         </div>
       </section>
 
