@@ -134,7 +134,6 @@ const COPY = {
         ghost: true,
       },
     ],
-    foot: "Q&A and Monitor are included — ask and watch all you want, no tokens spent. The agents that do real work on your behalf spend tokens like any task, because the value they deliver is worth it. You only ever spend on outcomes you approve.",
   },
 
   token: {

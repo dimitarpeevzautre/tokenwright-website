@@ -126,7 +126,6 @@ function Agents() {
             </div>
           ))}
         </div>
-        <p className="agents-foot">{c.foot}</p>
       </div>
     </section>
   );
