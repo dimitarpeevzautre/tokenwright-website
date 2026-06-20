@@ -125,11 +125,11 @@ const COPY = {
       {
         tag: "On the roadmap",
         name: "Future agents",
-        body: "Every new agent becomes available to existing subscribers without renegotiation. Refactor Recommender, Security Auditor, Release Notes Writer — all in scope as we ship them.",
+        body: "Every new agent becomes available to existing subscribers without renegotiation. A Best Practices Reviewer, a Data Consistency Checker, a Security Auditor — all in scope as we ship them.",
         examples: [
-          "Refactor Recommender",
+          "Best Practices Reviewer",
+          "Data Consistency Checker",
           "Security Auditor",
-          "Release Notes Writer",
         ],
         ghost: true,
       },
