@@ -31,7 +31,7 @@ const COPY = {
   pains: {
     eyebrow: "Why now",
     h2: "Three places teams lose time.",
-    sub: "Most E-commerce Directors work with capable teams who genuinely want to ship. Good ideas still wait, though — usually because of distance between the people writing the code and the merchant who needs it, and how much context travels with each request.",
+    sub: "Most e-commerce directors work with capable teams who genuinely want to ship. Good ideas still wait, though — usually because of distance between the people writing the code and the merchant who needs it, and how much context travels with each request.",
     cards: [
       {
         num: "01",
@@ -380,7 +380,7 @@ const COPY = {
     lede: "Onboarding is a product surface, not a consulting engagement. From admission to your first merge-ready PR — typically under fourteen days.",
     timeline: [
       { day: "Sign up",      title: "Frictionless registration", body: "One click. No SOW. No sales call. You join the waiting list and see your batch position from your dashboard." },
-      { day: "Admission",    title: "Admission",                  body: "We admit in small batches by hand. When your spot is up, you receive a free token allowance and access to the dashboard, the Q&A Agent, and the quote engine." },
+      { day: "Admission",    title: "Admission",                  body: "We admit in small batches by hand. When your spot is up, you receive free starter tokens and access to the dashboard, the Q&A Agent, and the quote engine." },
       { day: "Connect",      title: "Sandbox or repo access",    body: "You point us at a sandbox/dev instance (preferred — lets the engine verify behavior) or grant read-only repository access. Takes minutes, not days. No production access required." },
       { day: "Day 1 – 3",    title: "Init: codebase ingestion",  body: "First paid task. Cartridges mapped, custom vs. base code separated, integration points catalogued, quality signals scored. You receive the State of the Codebase report." },
       { day: "Day 4 – 7",    title: "Code Review",               body: "Second paid task. Quality and risk assessment across the codebase. Surfaces refactor opportunities, test coverage gaps, and quick wins." },

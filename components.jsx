@@ -150,11 +150,11 @@ function QuoteTicket() {
         <span className="lbl">Specification · quote</span>
         <span className="qt-pill">quoted in 04:11</span>
       </div>
-      <div className="qt-request">"Add Apple Pay to checkout, including international storefronts."</div>
-      <div className="qt-line"><span>Scope &amp; specification</span><span className="v">96</span></div>
-      <div className="qt-line"><span>Implementation</span><span className="v">300</span></div>
-      <div className="qt-line"><span>Test coverage</span><span className="v">120</span></div>
-      <div className="qt-line"><span>Senior operator review</span><span className="v">60</span></div>
+      <div className="qt-request">"Add Apple Pay to checkout, including international storefronts and the existing wallet test suite."</div>
+      <div className="qt-line"><span>AI context + generation</span><span className="v">144</span></div>
+      <div className="qt-line"><span>Senior operator review</span><span className="v">240</span></div>
+      <div className="qt-line"><span>Integration &amp; PR effort</span><span className="v">120</span></div>
+      <div className="qt-line"><span>Liability &amp; guarantee</span><span className="v">72</span></div>
       <div className="qt-total"><span>Quoted total</span><span className="v">576 · firm cap</span></div>
     </div>
   );
