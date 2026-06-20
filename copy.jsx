@@ -105,11 +105,11 @@ const COPY = {
       {
         tag: "Available now",
         name: "Q&A Agent",
-        body: "Your team asks plain-English questions about your own codebase. \"Where does the loyalty calculation actually live?\" \"What happens when a guest checkout collides with a promo code?\" Answers come back grounded in the repository — not in someone's recollection.",
+        body: "Merchandisers, PMs, and IT leads ask plain-English questions about how your store actually works. \"Why don't loyalty points apply to sale items?\" \"What would it take to add Apple Pay to checkout?\" Answers come back grounded in your real code — in plain language, not someone's best guess.",
         examples: [
-          "Where does the loyalty calc live?",
-          "Which controllers touch the cart?",
-          "What's the guest-checkout coupon path?",
+          "Why don't loyalty points apply to sale items?",
+          "What would it take to add Apple Pay?",
+          "Where's the free-shipping threshold set?",
         ],
       },
       {
