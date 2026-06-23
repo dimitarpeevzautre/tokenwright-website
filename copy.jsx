@@ -113,9 +113,9 @@ const COPY = {
         ],
       },
       {
-        tag: "Available now",
+        tag: "Coming soon",
         name: "Monitor Agent",
-        body: "Watches your environments for errors, anomalies, performance regressions, and security signals. Catches issues before they become problems. Auto-fixes the safe ones; surfaces the rest as quote-ready remediation tasks.",
+        body: "Will watch your environments for errors, anomalies, performance regressions, and security signals — catching issues before they become problems, auto-fixing the safe ones, and surfacing the rest as quote-ready remediation tasks. In active development.",
         examples: [
           "Error rate spike, /cart route",
           "Slow query, loyalty_balance.ds",
@@ -299,7 +299,7 @@ const COPY = {
         bullets: [
           "Quoted in minutes, not weeks",
           "Firm token cap — overruns are on us",
-          "Q&A + Monitor agents included",
+          "Q&A agent included (Monitor agent coming soon)",
           "One dedicated senior operator",
         ],
         cta: "Join the waiting list",
