@@ -100,9 +100,14 @@ function Foot() {
             <div key={c.title}>
               <h5>{c.title}</h5>
               <ul>
-                {c.links.map((lk) => (
-                  <li key={lk.l}><a href={lk.h}>{lk.l}</a></li>
-                ))}
+                {c.links.map((lk) => {
+                  const ext = /^https?:\/\//.test(lk.h);
+                  return (
+                    <li key={lk.l}>
+                      <a href={lk.h} {...(ext ? { target: "_blank", rel: "noopener noreferrer" } : {})}>{lk.l}</a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

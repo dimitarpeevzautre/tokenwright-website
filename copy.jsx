@@ -274,9 +274,9 @@ const COPY = {
         { l: "Press",        h: "#/contact" },
       ]},
       { title: "Legal", links: [
-        { l: "Terms",        h: "#" },
-        { l: "Privacy",      h: "#" },
-        { l: "Security",     h: "#" },
+        { l: "Terms",        h: "https://app.tokenwright.com/terms.html" },
+        { l: "Privacy",      h: "https://app.tokenwright.com/policy.html" },
+        { l: "Security",     h: "https://app.tokenwright.com/security.html" },
       ]},
     ],
     smallprint: "© Tokenwright · A ZaUtre company · Salesforce, SFCC, and Commerce Cloud are trademarks of Salesforce, Inc.",
