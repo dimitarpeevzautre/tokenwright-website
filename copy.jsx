@@ -229,12 +229,8 @@ const COPY = {
         a: "Nothing, on day one. We sit alongside them as a velocity layer — they keep production, pager duty, the long-tail platform work. As the Monitor Agent earns trust, you can optionally move routine operations to us. Full consolidation is a conversation you raise, not one we pitch. Most clients find the relationship with their incumbent SI improves because we absorb the work that drags their bandwidth.",
       },
       {
-        q: "What's your bug-fix SLA?",
-        a: "48 business hours from a confirmed bug report to a merge-ready PR. If we don't hit it, the fix is on us — no tokens consumed. This is a hard commitment, not a target.",
-      },
-      {
         q: "What if you mis-quote a feature?",
-        a: "The token cap on every quote is firm. If a feature consumes more tokens than quoted, the overrun is on us. You will never receive a surprise invoice. If we mis-scope a request more than twice in a month, we credit the difference automatically.",
+        a: "The token cap on every quote is firm. If a feature consumes more tokens than quoted, the overrun is on us. You will never receive a surprise invoice.",
       },
     ],
   },
