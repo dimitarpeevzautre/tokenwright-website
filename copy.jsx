@@ -80,7 +80,7 @@ const COPY = {
       {
         num: "02",
         label: "Specification",
-        desc: "Our engine returns the scope, approach, token quote, and risk flags. You approve before any tokens are deducted.",
+        desc: "Our engine returns the scope, approach, token quote, and risk flags. You approve before any work tokens are reserved.",
         featured: true,
         badge: "Quote in minutes, not weeks",
       },
@@ -163,7 +163,7 @@ const COPY = {
         n: "Stage 02",
         title: "Shared operations",
         when: "Months 6 – 12",
-        body: "The Monitor Agent has demonstrated value on the production side. Routine fixes and small incidents move to us. Your incumbent SI handles the bigger production events.",
+        body: "Once the Monitor Agent ships and earns trust on the production side, routine fixes and small incidents can move to us. Your incumbent SI handles the bigger production events.",
         featured: true,
       },
       {
@@ -187,10 +187,10 @@ const COPY = {
     steps: [
       { n: "01", t: "Sign up.",                d: "One click. No SOW. No sales call." },
       { n: "02", t: "Reviewed and admitted by hand.", d: "Capacity-controlled. We email you the moment you're in." },
-      { n: "03", t: "Free starter tokens.",    d: "Explore the engine on your real code. Ask the Q&A Agent. Get a quote on a real backlog item." },
-      { n: "04", t: "Activate your plan.",     d: "Pick a monthly tier; its token balance is live the same day. Spend it on tasks as you approve them. Credit card or PO." },
-      { n: "05", t: "Init + Code Review.",     d: "Your first paid tasks. State of the Codebase report + quality and risk assessment." },
-      { n: "06", t: "Default backlog appears.", d: "Refactor tasks, quick wins, test suite scope — all pre-quoted in your project, ready to approve." },
+      { n: "03", t: "Free starter tokens.",    d: "Explore the engine on your real code, ask the Q&A Agent, and approve a real backlog item — no plan required." },
+      { n: "04", t: "Init + Code Review.",     d: "State of the Codebase report and a pre-quoted backlog, generated from your connected code." },
+      { n: "05", t: "Default backlog appears.", d: "Refactor tasks, quick wins, test suite scope — all pre-quoted in your project, ready to approve." },
+      { n: "06", t: "Activate a plan.",        d: "Pick a monthly tier when you're ready to scale beyond your free starter tokens. Credit card or PO." },
     ],
     form: {
       title: "Reserve your spot",
@@ -275,7 +275,7 @@ const COPY = {
         { l: "Security",     h: "https://app.tokenwright.com/security.html" },
       ]},
     ],
-    smallprint: "© Tokenwright · A ZaUtre company · Salesforce, SFCC, and Commerce Cloud are trademarks of Salesforce, Inc.",
+    smallprint: "© Tokenwright · Operated by RAN OOD (EIK 107590615), Bulgaria — a ZaUtre company · Salesforce, SFCC, and Commerce Cloud are trademarks of Salesforce, Inc.",
   },
 
   /* ─── sub-pages ─────────────────────────────────────────── */
@@ -377,8 +377,8 @@ const COPY = {
       { day: "Sign up",      title: "Frictionless registration", body: "One click. No SOW. No sales call. You join the waiting list, and we email you the moment you're admitted." },
       { day: "Admission",    title: "Admission",                  body: "We review and admit by hand. When your spot is up, you receive free starter tokens and access to the dashboard, the Q&A Agent, and the quote engine." },
       { day: "Connect",      title: "Sandbox or repo access",    body: "You point us at a sandbox/dev instance (preferred — lets the engine verify behavior) or grant read-only repository access. Takes minutes, not days. No production access required." },
-      { day: "Day 1 – 3",    title: "Init: codebase ingestion",  body: "First paid task. Cartridges mapped, custom vs. base code separated, integration points catalogued, quality signals scored. You receive the State of the Codebase report." },
-      { day: "Day 4 – 7",    title: "Code Review",               body: "Second paid task. Quality and risk assessment across the codebase. Surfaces refactor opportunities, test coverage gaps, and quick wins." },
+      { day: "Day 1 – 3",    title: "Init: codebase ingestion",  body: "Cartridges mapped, custom vs. base code separated, integration points catalogued, quality signals scored. You receive the State of the Codebase report — and a pre-quoted backlog you can start approving with your free starter tokens." },
+      { day: "Day 4 – 7",    title: "Code Review",               body: "Quality and risk assessment across the codebase. Surfaces refactor opportunities, test coverage gaps, and quick wins." },
       { day: "Day 7",        title: "Default backlog appears",   body: "Your project auto-populates with quoted, prioritizable tasks: refactor work, test suite build-out, quick wins. You approve task-by-task." },
       { day: "Day 7 – 14",   title: "First feature PR lands",    body: "Your incumbent SI reviews and deploys on their schedule. From here, you ship at whatever pace you can approve." },
     ],
