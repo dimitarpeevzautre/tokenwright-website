@@ -1,6 +1,6 @@
 /* Homepage sections for Tokenwright. */
 
-const { useState: useStateS } = React;
+const { useState } = React;
 
 /* ---------------- HERO ---------------- */
 function Hero() {
@@ -189,11 +189,11 @@ function Expansion() {
 /* ---------------- WAITING LIST ---------------- */
 function WaitingList() {
   const c = window.COPY.waitlist;
-  const [data, setData] = useStateS({});
-  const [errors, setErrors] = useStateS({});
-  const [sent, setSent] = useStateS(false);
-  const [submitting, setSubmitting] = useStateS(false);
-  const [formError, setFormError] = useStateS("");
+  const [data, setData] = useState({});
+  const [errors, setErrors] = useState({});
+  const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [formError, setFormError] = useState("");
 
   const set = (n, v) => setData((d) => ({ ...d, [n]: v }));
 

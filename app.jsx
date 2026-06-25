@@ -1,6 +1,6 @@
 /* Main app: hash router + page composition. */
 
-const { useState: useStateA, useEffect: useEffectA } = React;
+const { useState, useEffect } = React;
 
 function useHashRoute() {
   const parse = () => {
@@ -8,8 +8,8 @@ function useHashRoute() {
     const [path, anchor] = raw.split("#");
     return { path: path || "/", anchor: anchor || "" };
   };
-  const [route, setRoute] = useStateA(parse());
-  useEffectA(() => {
+  const [route, setRoute] = useState(parse());
+  useEffect(() => {
     const on = () => {
       const r = parse();
       setRoute(r);

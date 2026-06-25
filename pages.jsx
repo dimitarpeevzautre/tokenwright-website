@@ -1,5 +1,7 @@
 /* Sub-pages for Tokenwright: /pricing /how-it-works /onboarding /contact */
 
+const { useState } = React;
+
 function PageHero({ crumb, h1, lede }) {
   return (
     <section className="page-hero">
@@ -230,8 +232,8 @@ function OnboardingPage() {
 /* ---------------- /contact ---------------- */
 function ContactPage() {
   const c = window.COPY.contact;
-  const [data, setData] = useStateS({ kind: "Partner" });
-  const [sent, setSent] = useStateS(false);
+  const [data, setData] = useState({ kind: "Partner" });
+  const [sent, setSent] = useState(false);
   const set = (n, v) => setData((d) => ({ ...d, [n]: v }));
   const submit = (e) => {
     e.preventDefault();
