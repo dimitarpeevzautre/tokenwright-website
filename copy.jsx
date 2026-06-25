@@ -6,13 +6,6 @@ const COPY = {
     tag: "Productized, AI-accelerated delivery for Salesforce Commerce Cloud.",
   },
 
-  nav: [
-    { label: "How it works", href: "#/how-it-works" },
-    { label: "Agents",       href: "#/#agents" },
-    { label: "Pricing",      href: "#/pricing" },
-    { label: "Onboarding",   href: "#/onboarding" },
-  ],
-
   hero: {
     eyebrow: "Private launch · Salesforce Commerce Cloud",
     h1Lead: "Senior operators.\nQuoted in minutes.",

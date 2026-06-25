@@ -235,6 +235,11 @@ function ContactPage() {
   const set = (n, v) => setData((d) => ({ ...d, [n]: v }));
   const submit = (e) => {
     e.preventDefault();
+    // Static marketing site (no backend of its own) — open the visitor's mail
+    // client with the note pre-filled rather than silently discarding it.
+    const subject = `[${data.kind || "Contact"}] ${(data.name || "").trim()}`.trim();
+    const body = `${(data.msg || "").trim()}\n\n— ${(data.name || "").trim()} (${(data.email || "").trim()})`;
+    window.location.href = `mailto:hello@tokenwright.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSent(true);
   };
   return (
@@ -246,7 +251,7 @@ function ContactPage() {
             <div className="form-success">
               <div className="check">✓</div>
               <h3>Thanks. We'll be in touch.</h3>
-              <p>Your message has been routed to the right inbox. Expect a real reply, not a sequence.</p>
+              <p>Your email client should have opened with your note ready to send to hello@tokenwright.com. Expect a real reply, not a sequence.</p>
             </div>
           ) : (
             <form className="trial-form" onSubmit={submit}>
