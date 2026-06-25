@@ -331,7 +331,7 @@ function WaitingList() {
 /* ---------------- OBJECTIONS / FAQ ---------------- */
 function Objections() {
   const c = window.COPY.objections;
-  const [open, setOpen] = useStateS(0);
+  const [open, setOpen] = useState(0);
   return (
     <section className="section sunken" id="objections">
       <div className="container narrow" style={{ maxWidth: 920 }}>
