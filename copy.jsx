@@ -198,6 +198,11 @@ const COPY = {
       submit: "Join the waiting list",
       foot: "No credit card. No commitment beyond admission. Token purchase happens after you're admitted.",
     },
+    demo: {
+      lead: "Prefer to talk first?",
+      cta: "Request a demo",
+      href: "https://calendar.app.google/KY57XQRmoHMM7kxo7",
+    },
   },
 
   objections: {

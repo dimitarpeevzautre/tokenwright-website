@@ -272,6 +272,18 @@ function WaitingList() {
                 </li>
               ))}
             </ol>
+
+            <div className="wl-demo">
+              <span className="wl-demo-lead">{c.demo.lead}</span>
+              <a
+                className="btn btn-secondary btn-sm"
+                href={c.demo.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {c.demo.cta}<Arrow />
+              </a>
+            </div>
           </div>
 
           {sent ? (

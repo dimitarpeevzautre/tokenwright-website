@@ -926,3 +926,8 @@ p { margin: 0; color: var(--ink-2); font-family: var(--font-body); text-wrap: pr
 .wl-steps li .n { font-family: var(--font-mono); font-size: 12px; color: var(--accent-deep); letter-spacing: 0.06em; flex-shrink: 0; width: 26px; }
 .wl-steps li .body { font-size: 14.5px; color: var(--ink-3); line-height: 1.55; }
 .wl-steps li .body strong { color: var(--ink); font-weight: 500; margin-right: 4px; }
+.wl-demo {
+  display: flex; align-items: center; gap: 16px;
+  margin-top: 28px; flex-wrap: wrap;
+}
+.wl-demo-lead { font-family: var(--font-mono); font-size: 13px; color: var(--ink-3); }
