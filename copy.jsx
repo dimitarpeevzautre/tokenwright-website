@@ -9,7 +9,7 @@ const COPY = {
   hero: {
     eyebrow: "Private launch · Salesforce Commerce Cloud",
     h1Lead: "Senior operators.\nQuoted in minutes.",
-    h1Accent: "Managed Tokens for SFCC.",
+    h1Accent: "The velocity layer for Salesforce Commerce Cloud.",
     lede: "The backlog item that's been stuck for months can ship this week. One senior operator, with deep context on your entire codebase, quotes it against your actual code in minutes and delivers a merge-ready PR in days. And because the models keep improving, every engagement gets sharper than the last.",
     primary: "Join the waiting list",
     secondary: "See how Managed Tokens work",
@@ -94,6 +94,7 @@ const COPY = {
     eyebrow: "Always-on intelligence",
     h2: "Your codebase, always understood. Even when you're not spending tokens.",
     sub: "Once you're onboarded, the engine runs continuously. The same understanding that prices your tasks is available to your internal team as a set of agents — part of the engine, never separate products to buy.",
+    useCaseCaption: "Ask in plain English; the Q&A Agent answers grounded in your actual store — like this real question about product badges. Free with every account, no ticket and no waiting on a developer.",
     cards: [
       {
         tag: "Available now",

@@ -160,7 +160,9 @@ function QuoteTicket() {
       <div className="qt-line"><span>Senior operator review</span><span className="v">240</span></div>
       <div className="qt-line"><span>Integration &amp; PR effort</span><span className="v">120</span></div>
       <div className="qt-line"><span>Liability &amp; guarantee</span><span className="v">72</span></div>
-      <div className="qt-total"><span>Quoted total</span><span className="v">576 · firm cap</span></div>
+      <div className="qt-total"><span>Quoted total</span><span className="v">576 tokens · firm cap</span></div>
+      <div className="qt-anchor">≈ €1,800 delivered — a fixed price, not an hourly estimate.</div>
+      <div className="qt-note">Tokens are our fixed unit: AI build + senior SFCC review. Never an hourly bill.</div>
     </div>
   );
 }

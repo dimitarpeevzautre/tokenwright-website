@@ -28,9 +28,9 @@ function Home() {
   return (
     <React.Fragment>
       <Hero />
+      <HowItWorks />
       <Pains />
       <Shift />
-      <HowItWorks />
       <Agents />
       <TokenSection />
       <Expansion />

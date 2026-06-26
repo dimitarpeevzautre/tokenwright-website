@@ -114,6 +114,14 @@ function Agents() {
         <Eyebrow>{c.eyebrow}</Eyebrow>
         <h2 style={{ marginTop: 20, maxWidth: 880 }}>{c.h2}</h2>
         <p className="lede" style={{ marginTop: 20, maxWidth: 720 }}>{c.sub}</p>
+        <figure className="qa-usecase">
+          <img
+            src="assets/qa-agent-example.png"
+            alt="The Q&amp;A Agent answering, in plain English, how to set the 'new' product badge — grounded in the store's actual custom fields and site preferences."
+            loading="lazy"
+          />
+          <figcaption>{c.useCaseCaption}</figcaption>
+        </figure>
         <div className="agents-grid">
           {c.cards.map((a) => (
             <div key={a.name} className={`agent-card ${a.ghost ? "ghost" : ""}`}>
