@@ -24,6 +24,7 @@ function Hero() {
                 {c.secondary}<Arrow />
               </a>
             </div>
+            <div className="hero-free">{c.freeTier}</div>
             <div className="meta">
               {c.meta.map((m) => <span key={m}>{m}</span>)}
             </div>
@@ -189,6 +190,31 @@ function Expansion() {
             </div>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- ACCESS & TRUST ---------------- */
+function TrustStrip() {
+  const c = window.COPY.trust;
+  return (
+    <section className="section" id="trust">
+      <div className="container narrow" style={{ maxWidth: 920 }}>
+        <Eyebrow>{c.eyebrow}</Eyebrow>
+        <h2 style={{ marginTop: 20, maxWidth: 760 }}>{c.h2}</h2>
+        <p className="lede" style={{ marginTop: 20, maxWidth: 640 }}>{c.sub}</p>
+        <div className="trust-cols">
+          <div className="trust-col access">
+            <div className="trust-label">{c.accessLabel}</div>
+            <ul>{c.access.map((i) => <li key={i}>{i}</li>)}</ul>
+          </div>
+          <div className="trust-col never">
+            <div className="trust-label">{c.neverLabel}</div>
+            <ul>{c.never.map((i) => <li key={i}>{i}</li>)}</ul>
+          </div>
+        </div>
+        <p className="trust-footnote">{c.footnote}</p>
       </div>
     </section>
   );
@@ -430,6 +456,7 @@ window.HowItWorks = HowItWorks;
 window.Agents = Agents;
 window.TokenSection = TokenSection;
 window.Expansion = Expansion;
+window.TrustStrip = TrustStrip;
 window.WaitingList = WaitingList;
 window.Objections = Objections;
 window.Team = Team;

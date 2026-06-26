@@ -19,6 +19,7 @@ const COPY = {
       "Priced on outcomes, not hours or compute",
       "Firm cap, overruns on us",
     ],
+    freeTier: "Start free: the Q&A Agent + scoping + 300 starter tokens (~2 small changes). No card, no commitment.",
   },
 
   pains: {
@@ -167,6 +168,25 @@ const COPY = {
         body: "We absorb the traditional SFCC scope — deploys, support, 24/7 operations — under one Tokenwright relationship. One vendor, one bill, one team. Stage 03 is a conversation you raise, not one we pitch.",
       },
     ],
+  },
+
+  trust: {
+    eyebrow: "Access & trust",
+    h2: "Read-only access. Never your production, data, or secrets.",
+    sub: "Giving an outside team access is the real hurdle — so we ask for the least we can, and never touch what matters most.",
+    accessLabel: "What we access",
+    access: [
+      "A sandbox/dev instance (preferred) — or read-only repository access",
+      "Scoped per operator; no production access required",
+      "Cartridge structure, custom code, integration manifests",
+    ],
+    neverLabel: "What we never touch",
+    never: [
+      "Production environments. Ever.",
+      "Customer data, PII, payment infrastructure",
+      "Deploy keys, pager rotations, CI/CD secrets",
+    ],
+    footnote: "SOC 2 Type II audit in progress; report available under NDA on request.",
   },
 
   waitlist: {

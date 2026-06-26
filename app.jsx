@@ -34,6 +34,7 @@ function Home() {
       <Agents />
       <TokenSection />
       <Expansion />
+      <TrustStrip />
       <WaitingList />
       <Objections />
       <Team />
