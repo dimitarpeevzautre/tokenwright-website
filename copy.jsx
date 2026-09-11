@@ -395,8 +395,8 @@ const COPY = {
     timeline: [
       { day: "Sign up",      title: "Frictionless registration", body: "One click. No SOW. No sales call. You join the waiting list, and we email you the moment you're admitted." },
       { day: "Admission",    title: "Admission",                  body: "We review and admit by hand. When your spot is up, you receive free starter tokens and access to the dashboard, the Q&A Agent, and the quote engine." },
-      { day: "Connect",      title: "Sandbox or repo access",    body: "You point us at a sandbox/dev instance (preferred — lets the engine verify behavior) or grant read-only repository access. Takes minutes, not days. No production access required." },
-      { day: "Day 1 – 3",    title: "Init: codebase ingestion",  body: "Cartridges mapped, custom vs. base code separated, integration points catalogued, quality signals scored. You receive the State of the Codebase report — and a pre-quoted backlog you can start approving with your free starter tokens." },
+      { day: "Connect",      title: "Sandbox or repo access",    body: "You point us at a sandbox/dev instance or grant read-only repository access. With a sandbox we pull its active code version — read-only, nothing is ever written to it — so analysis starts without a repository. A repository is what lets us deliver pull requests. Takes minutes, not days. No production access required." },
+      { day: "Day 1 – 3",    title: "Init: codebase ingestion",  body: "Cartridges mapped, custom vs. base code separated, integration points catalogued, quality signals scored. You receive the State of the Codebase report — and a pre-quoted backlog you can start approving with your free starter tokens. The backlog leads with the foundation task: your automated test suite." },
       { day: "Day 4 – 7",    title: "Code Review",               body: "Quality and risk assessment across the codebase. Surfaces refactor opportunities, test coverage gaps, and quick wins." },
       { day: "Day 7",        title: "Default backlog appears",   body: "Your project auto-populates with quoted, prioritizable tasks: refactor work, test suite build-out, quick wins. You approve task-by-task." },
       { day: "Day 7 – 14",   title: "First feature PR lands",    body: "Your incumbent SI reviews and deploys on their schedule. From here, you ship at whatever pace you can approve." },
@@ -416,9 +416,9 @@ const COPY = {
       "Anything your existing agency contractually owns",
     ],
     recommended: {
-      tag: "Recommended foundation task",
-      title: "Test Suite Build-Out",
-      body: "After Init and Code Review, our strongly recommended next engagement is a comprehensive automated test suite. It protects you (regressions caught before production, confidence to ship faster) and it protects us (every future PR lands on tested ground, sharpening our quality guarantee). It's the engagement that makes everything that follows cheaper.",
+      tag: "Foundation task",
+      title: "The test suite comes first.",
+      body: "The first item in every Tokenwright backlog is a comprehensive automated test suite, and the rest of the backlog unlocks once it lands. It protects you — regressions caught before production, confidence to ship faster — and it protects us: every future PR lands on tested ground, which is what makes our quality guarantee real. Already have a suite? The foundation task becomes verifying it and wiring it to run on every change.",
     },
   },
 
