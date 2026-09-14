@@ -108,9 +108,9 @@ const COPY = {
         ],
       },
       {
-        tag: "Coming soon",
+        tag: "Available now",
         name: "Monitor Agent",
-        body: "Will watch your environments for errors, anomalies, performance regressions, and security signals — catching issues before they become problems, auto-fixing the safe ones, and surfacing the rest as quote-ready remediation tasks. In active development.",
+        body: "Watches your sandboxes' logs and your repository for errors, anomalies and security risks — catching issues before they become problems and surfacing each one in plain language, with a quote-ready fix one click away. Included with every account.",
         examples: [
           "Error rate spike, /cart route",
           "Slow query, loyalty_balance.ds",
@@ -120,11 +120,11 @@ const COPY = {
       {
         tag: "On the roadmap",
         name: "Future agents",
-        body: "We ship new agents continuously — each a new, automated way to keep your storefront sharper. Every one reaches existing subscribers without renegotiation, the moment it's ready.",
+        body: "We ship new agents continuously — each a new, automated way to keep your storefront sharper. Thirteen are on the list today, and the Agents tab in your workspace lets your team vote on which we build next. Every one reaches existing subscribers without renegotiation, the moment it's ready.",
         examples: [
-          "Best Practices Reviewer",
-          "Data Consistency Checker",
-          "Security Auditor",
+          "Best Practices Reviewer", "Performance Agent",
+          "Data Consistency Checker", "Platform Upgrade Agent",
+          "Security Auditor", "Config Drift Agent",
         ],
         ghost: true,
       },
@@ -314,7 +314,7 @@ const COPY = {
         bullets: [
           "Quoted in minutes, not weeks",
           "Firm token cap — overruns are on us",
-          "Q&A agent included (Monitor agent coming soon)",
+          "Q&A and Monitor agents included",
           "One dedicated senior operator",
         ],
         cta: "Join the waiting list",
