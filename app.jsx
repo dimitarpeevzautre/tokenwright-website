@@ -51,10 +51,12 @@ function App() {
     case "/how-it-works": page = <HowItWorksPage />; break;
     case "/onboarding":   page = <OnboardingPage />; break;
     case "/contact":      page = <ContactPage />; break;
+    case "/webinar":      page = <WebinarPage />; break;
     default:              page = <Home />;
   }
   return (
     <React.Fragment>
+      <WebinarBar route={path} />
       <TopNav route={path} />
       {page}
       <Foot />

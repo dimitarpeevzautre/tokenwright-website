@@ -990,3 +990,35 @@ p { margin: 0; color: var(--ink-2); font-family: var(--font-body); text-wrap: pr
   margin-top: 28px; flex-wrap: wrap;
 }
 .wl-demo-lead { font-family: var(--font-mono); font-size: 13px; color: var(--ink-3); }
+
+/* -------- webinar -------- */
+.webinar-bar {
+  display: block;
+  background: var(--ink);
+  color: #FBFAF8;
+  font-size: 13.5px;
+  transition: background var(--t-fast);
+}
+.webinar-bar:hover { background: #2A2A28; }
+.webinar-bar .container {
+  display: flex; align-items: center; justify-content: center;
+  gap: 18px; min-height: 40px; padding-top: 8px; padding-bottom: 8px;
+  flex-wrap: wrap; text-align: center;
+}
+.webinar-bar .wb-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-hi);
+}
+.webinar-bar .wb-label .dot { width: 6px; height: 6px; background: var(--accent); display: inline-block; }
+.webinar-bar .wb-text { color: #C4BFB6; }
+.webinar-bar .wb-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-weight: 600; color: #FBFAF8;
+}
+@media (max-width: 680px) {
+  .webinar-bar .wb-text { display: none; }
+  .webinar-bar .container { gap: 12px; }
+}
+/* honeypot — off-screen rather than display:none, which some bots skip */
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }

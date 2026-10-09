@@ -82,6 +82,23 @@ function TopNav({ route }) {
   );
 }
 
+/* ---------------- webinar announcement bar ---------------- */
+// Sits above the nav on every page except the webinar page itself, and
+// retires on its own once the webinar has ended.
+function WebinarBar({ route }) {
+  const c = window.COPY.webinar;
+  if (route === "/webinar" || Date.now() > Date.parse(c.endsAt)) return null;
+  return (
+    <a className="webinar-bar" href="#/webinar">
+      <div className="container">
+        <span className="wb-label"><span className="dot" />{c.bar.label}</span>
+        <span className="wb-text">{c.bar.text}</span>
+        <span className="wb-cta">{c.bar.cta}<Arrow size={12} /></span>
+      </div>
+    </a>
+  );
+}
+
 /* ---------------- footer ---------------- */
 function Foot() {
   const f = window.COPY.footer;
@@ -170,6 +187,7 @@ function QuoteTicket() {
 window.scrollToAnchor = scrollToAnchor;
 window.BrandMark = BrandMark;
 window.TopNav = TopNav;
+window.WebinarBar = WebinarBar;
 window.Foot = Foot;
 window.Reveal = Reveal;
 window.Eyebrow = Eyebrow;

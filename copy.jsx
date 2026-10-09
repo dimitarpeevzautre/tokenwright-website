@@ -427,6 +427,50 @@ const COPY = {
     h1: "Not buying tokens? Here's the right door.",
     lede: "Investors, press, partners, and prospective senior operators — this form goes to the right inbox.",
   },
+
+  webinar: {
+    // Google Apps Script web app URL (ends in /exec) — see webinar/registrations.gs.
+    endpoint: "https://script.google.com/macros/s/AKfycbz_ge1B-rfOCuu1CQOweO-C6sFKETk53xbYN5dJvv8n3StFpzIPmI1pA91CA8BjSQdV/exec",
+    // Webinar end — the homepage banner hides itself after this moment.
+    endsAt: "2026-10-20T16:45:00+02:00",
+    crumb: "Webinar",
+    h1: "Managed Tokens, live: shipping SFCC work with AI and senior review.",
+    lede: "A live walkthrough for Salesforce Commerce Cloud teams — from a stuck backlog item to a quoted task to a merge-ready pull request, on a real storefront codebase.",
+    bar: {
+      label: "Live webinar · Tue 20 October",
+      text: "See a stuck SFCC backlog item go from quote to merge-ready PR.",
+      cta: "Register",
+    },
+    when: {
+      label: "When",
+      value: "Tuesday, 20 October 2026",
+      meta: "16:00 CEST · 45 minutes · Online, free",
+    },
+    agenda: [
+      { n: "01", t: "Quote in minutes.",       d: "An agent scopes a real backlog item against the codebase and returns a firm token price." },
+      { n: "02", t: "Senior review, on screen.", d: "How an operator checks the plan before any code is written." },
+      { n: "03", t: "Merge-ready PR.",         d: "The delivered pull request, its tests, and what the approver signs off on." },
+      { n: "04", t: "Your questions.",          d: "Open Q&A with the team — bring your hardest stuck item." },
+    ],
+    form: {
+      title: "Register for the webinar",
+      sub: "We'll email you the joining link before the session.",
+      fields: [
+        { name: "name",    label: "Full name",  type: "text",  placeholder: "Jane Park",           autoComplete: "name" },
+        { name: "email",   label: "Work email", type: "email", placeholder: "jane@retailer.com",   autoComplete: "email" },
+        { name: "company", label: "Company",    type: "text",  placeholder: "Northstar Retail",    autoComplete: "organization" },
+        { name: "title",   label: "Job title",  type: "text",  placeholder: "E-commerce Director", autoComplete: "organization-title" },
+        { name: "phone",   label: "Phone",      type: "tel",   placeholder: "+31 6 1234 5678",     autoComplete: "tel" },
+      ],
+      submit: "Register",
+      foot: "Free. We use these details for this webinar only.",
+      privacy: { l: "Privacy policy", h: "https://app.tokenwright.com/policy.html" },
+    },
+    done: {
+      h: "You're registered.",
+      p: "We'll email the joining link to you before Tuesday, 20 October. See you there.",
+    },
+  },
 };
 
 window.COPY = COPY;

@@ -292,7 +292,139 @@ function ContactPage() {
   );
 }
 
+/* ---------------- /webinar ---------------- */
+function WebinarPage() {
+  const c = window.COPY.webinar;
+  const [data, setData] = useState({});
+  const [errors, setErrors] = useState({});
+  const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [formError, setFormError] = useState("");
+
+  const set = (n, v) => setData((d) => ({ ...d, [n]: v }));
+
+  // Registrations land in a Google Sheet via an Apps Script web app
+  // (webinar/registrations.gs). A form-encoded POST is a "simple" CORS request,
+  // so there's no preflight, and the script's JSON reply is readable.
+  const submit = async (e) => {
+    e.preventDefault();
+    const errs = {};
+    c.form.fields.forEach((f) => {
+      const v = (data[f.name] || "").trim();
+      if (!v) errs[f.name] = "Required.";
+      else if (f.type === "email" && !/^\S+@\S+\.\S+$/.test(v)) errs[f.name] = "Looks off — double-check.";
+      else if (f.type === "tel" && v.replace(/\D/g, "").length < 6) errs[f.name] = "Looks off — double-check.";
+    });
+    setErrors(errs);
+    if (Object.keys(errs).length) return;
+
+    if (!c.endpoint) {
+      setFormError("Registration isn't open yet — please try again shortly.");
+      return;
+    }
+
+    const body = new URLSearchParams();
+    c.form.fields.forEach((f) => body.append(f.name, (data[f.name] || "").trim()));
+    body.append("website", data.website || ""); // honeypot — humans leave it empty
+
+    setSubmitting(true);
+    setFormError("");
+    try {
+      const res = await fetch(c.endpoint, { method: "POST", body });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok || !out.ok) {
+        setFormError(out.error || "Something went wrong — please try again.");
+        return;
+      }
+      setSent(true);
+    } catch (err) {
+      setFormError("Couldn't reach the server — check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <div>
+      <PageHero crumb={c.crumb} h1={c.h1} lede={c.lede} />
+      <section className="section tight">
+        <div className="container">
+          <div className="waitlist-wrap" style={{ marginTop: 0 }}>
+            <div>
+              <div className="cohort-card" style={{ marginTop: 0 }}>
+                <div className="ck">{c.when.label}</div>
+                <div className="cv">{c.when.value}</div>
+                <div className="cm">{c.when.meta}</div>
+                <div className="launch-dot" aria-hidden="true"></div>
+              </div>
+              <div style={{ marginTop: 44 }}><Eyebrow>What we'll cover</Eyebrow></div>
+              <ol className="wl-steps" style={{ marginTop: 8 }}>
+                {c.agenda.map((s) => (
+                  <li key={s.n}>
+                    <span className="n">{s.n}</span>
+                    <span className="body"><strong>{s.t}</strong> {s.d}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            {sent ? (
+              <div className="form-success">
+                <div className="check">✓</div>
+                <h3>{c.done.h}</h3>
+                <p>{c.done.p}</p>
+              </div>
+            ) : (
+              <form className="trial-form" onSubmit={submit} noValidate>
+                <div className="form-title">{c.form.title}</div>
+                <div className="form-sub">{c.form.sub}</div>
+                {c.form.fields.map((f) => (
+                  <div key={f.name} className={`field ${errors[f.name] ? "error" : ""}`}>
+                    <label htmlFor={`wb-${f.name}`}>{f.label}</label>
+                    <input
+                      id={`wb-${f.name}`}
+                      name={f.name}
+                      type={f.type}
+                      autoComplete={f.autoComplete}
+                      placeholder={f.placeholder}
+                      value={data[f.name] || ""}
+                      onChange={(e) => set(f.name, e.target.value)}
+                    />
+                    {errors[f.name] && <div className="err">{errors[f.name]}</div>}
+                  </div>
+                ))}
+                <div className="hp-field" aria-hidden="true">
+                  <label htmlFor="wb-website">Website</label>
+                  <input
+                    id="wb-website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={data.website || ""}
+                    onChange={(e) => set("website", e.target.value)}
+                  />
+                </div>
+                <button type="submit" className="btn btn-primary" disabled={submitting}>
+                  {submitting ? "Sending…" : c.form.submit}<Arrow />
+                </button>
+                {formError && <div className="err" style={{ marginTop: 10 }}>{formError}</div>}
+                <div className="form-foot">
+                  {c.form.foot}{" "}
+                  <a href={c.form.privacy.h} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>
+                    {c.form.privacy.l}
+                  </a>
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
 window.PricingPage = PricingPage;
+window.WebinarPage = WebinarPage;
 window.HowItWorksPage = HowItWorksPage;
 window.OnboardingPage = OnboardingPage;
 window.ContactPage = ContactPage;
