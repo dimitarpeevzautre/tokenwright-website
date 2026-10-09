@@ -434,11 +434,11 @@ const COPY = {
     // Webinar end — the homepage banner hides itself after this moment.
     endsAt: "2026-10-20T16:45:00+02:00",
     crumb: "Webinar",
-    h1: "Ask your store anything. Hear about problems before your shoppers do.",
-    lede: "Everyone ships faster with AI now. This live session for Salesforce Commerce Cloud teams is about what comes next: agents that answer questions from your real code, watch your instances as things happen, and review your storefront the way a senior architect would.",
+    h1: "What's next in Salesforce Commerce Cloud.",
+    lede: "How AI agents and senior operators change the way you work through your roadmap, run your store, and know your own code.",
     bar: {
       label: "Live webinar · Tue 20 October",
-      text: "SFCC agents that answer from your code and catch issues before shoppers do.",
+      text: "What's next in SFCC: agents and senior operators, live.",
       cta: "Register",
     },
     when: {
@@ -447,52 +447,24 @@ const COPY = {
       meta: "16:00 CEST · 45 minutes · Online, free",
     },
     agenda: [
-      { n: "01", t: "Ask your store anything.",  d: "The Q&A Agent answers plain-English questions from your code as it is today. We'll take questions from the audience and ask them live." },
-      { n: "02", t: "Caught as it happens.",     d: "The Monitor Agent reads your instance logs as they arrive, groups errors into signals, and investigates each one against your code." },
-      { n: "03", t: "Storefront checks.",        d: "Performance and SEO & AI Discoverability, run against the pages your shoppers land on." },
-      { n: "04", t: "Specialist code reviews.",  d: "Best practices, security, accessibility and localization, each reviewed by its own agent." },
-      { n: "05", t: "From finding to fix.",      d: "Any finding becomes a request: quoted against your code, checked by a senior operator, delivered as a PR." },
-      { n: "06", t: "What's next, and your questions.", d: "The agents on the roadmap, and open Q&A with the team." },
+      { n: "01", t: "Your roadmap.",   d: "Every backlog item quoted in minutes, built with AI, checked by a senior operator." },
+      { n: "02", t: "Your store.",     d: "Issues caught as they happen, and a first look at setting up promotions just by asking." },
+      { n: "03", t: "Your knowledge.", d: "Ask how anything works. No documentation, no one person who holds the know-how." },
+      { n: "04", t: "Your questions.", d: "Open Q&A with our senior operators." },
     ],
     lineup: {
-      eyebrow: "The line-up",
-      h2: "Eight agents live today. More on the way.",
-      cards: [
-        {
-          tag: "Live demo",
-          name: "Q&A Agent",
-          body: "Merchandisers, product managers and IT leads ask how the store actually works, and get answers grounded in the connected codebase. No stale documentation, no waiting on a developer.",
-          examples: [
-            "Why don't loyalty points apply to sale items?",
-            "Where's the free-shipping threshold set?",
-            "What would it take to add Apple Pay?",
-          ],
-        },
-        {
-          tag: "Live demo",
-          name: "Monitor Agent",
-          body: "Watches your instances and reacts when something goes wrong: what broke, what it affects and how far it reaches, with a fix proposed before anyone files a ticket.",
-          examples: [
-            "Error rate spike, /cart route",
-            "Slow query, loyalty_balance.ds",
-            "Auth anomaly, admin pipeline",
-          ],
-        },
-        {
-          tag: "Also live",
-          name: "Six more agents",
-          body: "Each one reads your storefront or your code for a different kind of problem, and any finding can become a request.",
-          examples: [
-            "Performance Agent",
-            "SEO & AI Discoverability Agent",
-            "Best Practices Reviewer",
-            "Security Auditor",
-            "Accessibility Agent",
-            "Localization Agent",
-          ],
-        },
+      eyebrow: "The agents",
+      h2: "Agents find it. Senior operators fix it.",
+      groups: [
+        { label: "Live today", names: [
+          "Q&A", "Monitor", "Performance", "SEO & AI Discoverability",
+          "Best Practices", "Security", "Accessibility", "Localization",
+        ]},
+        { label: "Coming next", soon: true, names: [
+          "Promotions", "Data Consistency", "Multi-Site Feature Matrix",
+          "Integration Health", "Job Monitoring", "Config Drift",
+        ]},
       ],
-      foot: "On the roadmap: Data Consistency Checker, Promotions Agent, Multi-Site Feature Matrix, Integration Health, Job Monitoring and Config Drift. Every new agent reaches existing accounts the moment it's ready.",
     },
     form: {
       title: "Register for the webinar",
