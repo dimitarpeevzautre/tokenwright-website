@@ -419,6 +419,25 @@ function WebinarPage() {
           </div>
         </div>
       </section>
+      <section className="section sunken">
+        <div className="container">
+          <Eyebrow>{c.lineup.eyebrow}</Eyebrow>
+          <h2 style={{ marginTop: 20, maxWidth: 880 }}>{c.lineup.h2}</h2>
+          <div className="agents-grid">
+            {c.lineup.cards.map((a) => (
+              <div key={a.name} className="agent-card">
+                <div className="agent-tag">{a.tag}</div>
+                <h3>{a.name}</h3>
+                <p>{a.body}</p>
+                <ul className="agent-examples">
+                  {a.examples.map((ex) => <li key={ex}>{ex}</li>)}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <p className="agents-foot">{c.lineup.foot}</p>
+        </div>
+      </section>
     </div>
   );
 }
