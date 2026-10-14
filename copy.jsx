@@ -63,7 +63,7 @@ const COPY = {
 
   how: {
     eyebrow: "How it works",
-    h2: "Four stages. Every task. Every time.",
+    h2: "Four stages. Every request. Every time.",
     sub: "From a one-line bug fix to a multi-week feature, the flow is the same — quoted in minutes, merge-ready PR in days.",
     steps: [
       {
@@ -74,7 +74,7 @@ const COPY = {
       {
         num: "02",
         label: "Specification",
-        desc: "Our engine returns the scope, approach, token quote, and risk flags. You approve before any work tokens are reserved.",
+        desc: "The scoping agent reads your actual code and returns the scope, approach, firm token quote, and risk flags. You approve before any work tokens are reserved.",
         featured: true,
         badge: "Quote in minutes, not weeks",
       },
@@ -92,9 +92,9 @@ const COPY = {
   },
 
   agents: {
-    eyebrow: "Always-on intelligence",
-    h2: "Your codebase, always understood. Even when you're not spending tokens.",
-    sub: "Once you're onboarded, the engine runs continuously. The same understanding that prices your tasks is available to your internal team as a set of agents — part of the engine, never separate products to buy.",
+    eyebrow: "The agents",
+    h2: "Your codebase, understood. Even when you're not spending tokens.",
+    sub: "Once you're onboarded, the same understanding that prices your requests is available to your internal team as a set of agents — five live today, ten more coming — part of the engine, never separate products to buy.",
     useCaseCaption: "Ask in plain English; the Q&A Agent answers grounded in your actual store — like this real question about product badges. Free with every account, no ticket and no waiting on a developer.",
     cards: [
       {
@@ -110,7 +110,7 @@ const COPY = {
       {
         tag: "Available now",
         name: "Monitor Agent",
-        body: "Watches your sandboxes' logs and your repository for errors, anomalies and security risks — catching issues before they become problems and surfacing each one in plain language, with a quote-ready fix one click away. Included with every account.",
+        body: "Watches your instances' logs and your repository for errors, anomalies and security risks, and reports each issue in plain language. Ask it to investigate and it reads your code and writes a finding: what is happening, the root cause, and whether there is a fix or a workaround. Turning that into priced work is one request away, quoted like any other. Included with every account.",
         examples: [
           "Error rate spike, /cart route",
           "Slow query, loyalty_balance.ds",
@@ -118,13 +118,43 @@ const COPY = {
         ],
       },
       {
-        tag: "On the roadmap",
-        name: "Future agents",
-        body: "We ship new agents continuously — each a new, automated way to keep your storefront sharper. Thirteen are on the list today, and the Agents tab in your workspace lets your team vote on which we build next. Every one reaches existing subscribers without renegotiation, the moment it's ready.",
+        tag: "Available now",
+        name: "SEO & AI Discoverability Agent",
+        body: "Checks that your pages are discoverable the way you intend — whether a shopper arrives from a search result or an AI assistant's answer — and traces every gap to the part of your code that causes it. Metadata, structured data, redirects, sitemaps and canonical drift, for search engines and AI assistants alike. Run it on request against any page you name.",
         examples: [
-          "Best Practices Reviewer", "Performance Agent",
-          "Data Consistency Checker", "Platform Upgrade Agent",
-          "Security Auditor", "Config Drift Agent",
+          "Product pages carry no machine-readable price",
+          "AI crawlers blocked at the edge, not in robots.txt",
+          "Canonical points at a page that 404s",
+        ],
+      },
+      {
+        tag: "Available now",
+        name: "Best Practices Reviewer",
+        body: "Reads your codebase the way a senior B2C Commerce architect would — how it extends the reference storefront, calls out to partners, caches, runs its jobs — and scores each area against what Salesforce recommends. Every finding says what the platform recommends, what not following it costs you and whether we can fix it. Any finding can become a request.",
+        examples: [
+          "Checkout copied from the reference storefront",
+          "Partner call made outside the Service Framework",
+          "Business logic living in ISML templates",
+        ],
+      },
+      {
+        tag: "Available now",
+        name: "Security Auditor",
+        body: "Reads your code the way an attacker would: what someone with no account, a signed-in shopper or a forged message from a partner could reach, and what they could read, change or pretend to be through it. Secrets in code, unprotected routes, unsafe handling of shopper input, exposed customer data and vulnerable dependencies — found before someone else finds them. It reads the code and never touches your live store.",
+        examples: [
+          "Credential committed in a config file",
+          "Order lookup without the order token",
+          "Shopper input rendered with encoding off",
+        ],
+      },
+      {
+        tag: "Coming soon",
+        name: "Ten more on the list",
+        body: "We ship new agents continuously — each a new, automated way to keep your storefront sharper. Ten are on the list today, and the Agents page in your workspace lets your team vote on which we build next. Every one reaches existing subscribers without renegotiation, the moment it's ready.",
+        examples: [
+          "Performance Agent", "Accessibility Agent",
+          "Localization Agent", "Promotions Agent",
+          "Data Consistency Checker", "Config Drift Agent",
         ],
         ghost: true,
       },
@@ -134,7 +164,7 @@ const COPY = {
   token: {
     eyebrow: "The unit",
     h2: "What a Managed Token actually is.",
-    definition: "A Managed Token is a small, fixed unit of delivered SFCC work — and the unit you spend. The agents do the building; each token is priced on the value of what ships — a merge-ready pull request — plus the senior judgment that directs and reviews them and the liability we carry for what we ship. Every plan includes a monthly balance; you spend it on the tasks you approve.",
+    definition: "A Managed Token is a small, fixed unit of delivered SFCC work — and the unit you spend. The agents do the building; each token is priced on the value of what ships — a merge-ready pull request — plus the senior judgment that directs and reviews them and the liability we carry for what we ship. Every plan includes a monthly balance; you spend it on the requests you approve.",
     meta: [
       { k: "Small feature or fix", v: "80 – 150 tokens",   accent: false },
       { k: "Mid-size feature",     v: "300 – 700 tokens",  accent: false },
@@ -158,7 +188,7 @@ const COPY = {
         n: "Stage 02",
         title: "Shared operations",
         when: "Months 6 – 12",
-        body: "Once the Monitor Agent ships and earns trust on the production side, routine fixes and small incidents can move to us. Your incumbent SI handles the bigger production events.",
+        body: "As the Monitor Agent earns trust on the production side, routine fixes and small incidents can move to us. Your incumbent SI handles the bigger production events.",
         featured: true,
       },
       {
@@ -176,7 +206,7 @@ const COPY = {
     sub: "Giving an outside team access is the real hurdle — so we ask for the least we can, and never touch what matters most.",
     accessLabel: "What we access",
     access: [
-      "A sandbox/dev instance (preferred) — or read-only repository access",
+      "A sandbox or dev instance (preferred) — or read-only repository access",
       "Scoped per operator; no production access required",
       "Cartridge structure, custom code, integration manifests",
     ],
@@ -202,8 +232,8 @@ const COPY = {
       { n: "01", t: "Sign up.",                d: "One click. No SOW. No sales call." },
       { n: "02", t: "Reviewed and admitted by hand.", d: "Capacity-controlled. We email you the moment you're in." },
       { n: "03", t: "Free starter tokens.",    d: "Explore the engine on your real code, ask the Q&A Agent, and approve a real backlog item — no plan required." },
-      { n: "04", t: "Init + Code Review.",     d: "State of the Codebase report and a pre-quoted backlog, generated from your connected code." },
-      { n: "05", t: "Default backlog appears.", d: "Refactor tasks, quick wins, test suite scope — all pre-quoted in your project, ready to approve." },
+      { n: "04", t: "Codebase analysis.",      d: "Cartridges mapped, integrations catalogued, a State of the Codebase report and a pre-quoted backlog, generated from your connected code." },
+      { n: "05", t: "Backlog published.",      d: "Your operator reviews each recommendation and its price and publishes it — refactor work, quick wins, the automated test suite first. You approve request by request." },
       { n: "06", t: "Activate a plan.",        d: "Pick a monthly tier when you're ready to scale beyond your free starter tokens. Credit card or PO." },
     ],
     form: {
@@ -237,7 +267,7 @@ const COPY = {
       },
       {
         q: "How does billing actually work?",
-        a: "Each monthly plan includes a token balance — the unit you spend on tasks. You submit a task, an agent returns a firm token quote in minutes, and tokens are only deducted once your designated approver signs off. The quote cap is firm: if the work runs over, the overrun is on us. Unused tokens expire at the end of each billing month — they don't roll over. If a heavy month needs more, you can top up at any time. Credit card or PO; whichever your procurement prefers.",
+        a: "Each monthly plan includes a token balance — the unit you spend on requests. You submit a request and the scoping agent reads your code and returns a firm token quote in minutes. Requesting a quote costs 10 tokens, and those are not credited back — the agent reads your actual codebase for every quote. The quoted tokens are only reserved once your designated approver signs off, and the cap is firm: if the work runs over, the overrun is on us. Your monthly allowance expires at the end of each billing month; tokens you buy as a top-up carry over until you use them. If a heavy month needs more, top up at any time. Credit card or PO; whichever your procurement prefers.",
       },
       {
         q: "What about security and code access?",
@@ -258,7 +288,7 @@ const COPY = {
     eyebrow: "Who builds this",
     h2: "Senior operators. Full codebase context. Every request, end-to-end.",
     body: "Tokenwright is staffed entirely by senior SFCC operators with deep experience shipping in production. Each one works with the full codebase context the engine provides — no context loss, no handoff chain, no extra layer between you and the person doing the work. Every Managed Token traces to a named human who reviewed every line.",
-    cadence: "One operator carrying your whole project sounds like a bottleneck — it isn't. The engine keeps your entire codebase loaded, so there's no context loss between tasks and no handoff chain to slow things down. Your operator picks up exactly where they left off and learns how you actually operate — which is how a single senior person moves at the speed of a team.",
+    cadence: "One operator carrying your whole project sounds like a bottleneck — it isn't. The engine keeps your entire codebase loaded, so there's no context loss between requests and no handoff chain to slow things down. Your operator picks up exactly where they left off and learns how you actually operate — which is how a single senior person moves at the speed of a team.",
     credibility: {
       k: "Backed by",
       v: "ZaUtre",
@@ -302,7 +332,7 @@ const COPY = {
   pricing: {
     crumb: "Pricing",
     h1: "Senior delivery, at a fraction of in-house cost.",
-    lede: "Every plan includes a monthly balance of tokens — the unit you spend on tasks — for roughly a quarter of what an agency or in-house team would bill. Quotes come back in minutes, and the cap on every quote is firm: overruns are on us, not you.",
+    lede: "Every plan includes a monthly balance of tokens — the unit you spend on requests — for roughly a quarter of what an agency or in-house team would bill. Quotes come back in minutes, and the cap on every quote is firm: overruns are on us, not you.",
     tiers: [
       {
         name: "Standard",
@@ -314,8 +344,9 @@ const COPY = {
         bullets: [
           "Quoted in minutes, not weeks",
           "Firm token cap — overruns are on us",
-          "Q&A and Monitor agents included",
+          "All five agents included",
           "One dedicated senior operator",
+          "Top-ups at €3.75 per token",
         ],
         cta: "Join the waiting list",
         feature: true,
@@ -327,12 +358,11 @@ const COPY = {
         value: "~77% less",
         priceLine: "than in-house · €4,200 / mo",
         tokens: "1,344 tokens / month",
-        note: "Three times the throughput for teams shipping continuously — around €18,000 of agency delivery, priced at a fraction.",
+        note: "Nearly three times the throughput for teams shipping continuously — around €18,000 of agency delivery, priced at a fraction.",
         bullets: [
           "Everything in Standard",
-          "Priority queue — 24h quotes",
-          "Quarterly architecture review",
-          "Refactor budget that lowers your run-rate",
+          "2.8× Standard's monthly allowance",
+          "Top-ups at €3.50 per token",
         ],
         cta: "Join the waiting list",
         feature: false,
@@ -344,12 +374,11 @@ const COPY = {
         value: "~78% less",
         priceLine: "than in-house · €13,000 / mo",
         tokens: "4,160 tokens / month",
-        note: "A full squad's output across storefronts and teams — about €60,000 of agency delivery, embedded with your platform team.",
+        note: "A full squad's output across storefronts and teams — about €60,000 of agency delivery, priced at a fraction.",
         bullets: [
           "Everything in Growth",
-          "Multiple operators",
-          "Embedded with your platform team",
-          "Monthly run-rate review",
+          "3.1× Growth's monthly allowance",
+          "Top-ups at €3.25 per token",
         ],
         cta: "Talk to us",
         feature: false,
@@ -361,25 +390,27 @@ const COPY = {
       h2: "Tokens are the unit you spend.",
       steps: [
         { n: "01", t: "Your plan includes a monthly token balance.", d: "Standard's 480 tokens cover about four or five small features a month — roughly 80–150 tokens each. Mid-size features draw more; the Apple Pay quote below comes to 576." },
-        { n: "02", t: "Submit a task, get a token quote in minutes.", d: "An agent scopes the work against your actual codebase and returns a firm token price before anything starts. Quoted in minutes, not weeks." },
-        { n: "03", t: "Approve, then spend from your balance.", d: "Tokens are only deducted on tasks you approve. Nothing moves without your sign-off, and every quote breaks down where the tokens go." },
-        { n: "04", t: "The cap is firm — overruns are on us.", d: "If a task runs past its quote, we absorb the difference. You are never billed above the cap, full stop." },
+        { n: "02", t: "Submit a request, get a token quote in minutes.", d: "The scoping agent reads your actual codebase and returns a firm token price before anything starts. Requesting a quote costs 10 tokens, and they are not credited back — the agent reads your code for every quote. Quoted in minutes, not weeks." },
+        { n: "03", t: "Approve, then spend from your balance.", d: "Tokens are only reserved on requests you approve, and settled when the PR lands. Nothing moves without your sign-off. One thing comes first: every backlog leads with the automated test-suite foundation task, and other quotes become approvable once it is delivered — or your operator waives it." },
+        { n: "04", t: "The cap is firm — overruns are on us.", d: "If a request runs past its quote, we absorb the difference. You are never billed above the cap, full stop." },
       ],
-      rollover: "Tokens reset monthly. Unused tokens expire at the end of your billing month — they don't roll over, so your balance always reflects the month ahead, never a backlog of credit.",
+      rollover: "Your monthly allowance resets each billing month: unused allowance tokens expire at the end of the month, so your balance always reflects the month ahead. Tokens you buy as a top-up are different — they carry over until you use them.",
     },
     sampleHeading: "What a quote actually looks like",
+    sampleLede: "One firm total, with the plan behind it. A quote is the steps your operator will take, the risks they see, and one number — not a line-by-line split to negotiate.",
     sample: {
       request: "Add Apple Pay to checkout, including international storefronts and the existing wallet test suite.",
+      planLabel: "The plan",
       lines: [
-        { k: "AI context + generation",     v: "144 tokens" },
-        { k: "Senior operator review",       v: "240 tokens" },
-        { k: "Integration & PR effort",      v: "120 tokens" },
-        { k: "Liability & guarantee",        v: "72 tokens" },
+        { n: "01", t: "Add Apple Pay as a payment method in checkout" },
+        { n: "02", t: "Enable it on every international storefront" },
+        { n: "03", t: "Extend the existing wallet test suite to cover it" },
+        { n: "04", t: "Open a documented, tested pull request for your SI to merge" },
       ],
       total: { k: "Quoted total", v: "576 tokens · firm cap" },
       compare: "≈ €1,800 delivered. The same scope runs ~€7,500 with an in-house or agency team.",
     },
-    transparency: "What you're paying for: the agents do the building — which is exactly why a quote lands at a fraction of in-house cost. The price reflects the senior SFCC judgment that directs and reviews them, the integration to a merge-ready PR, and the firm cap that puts overrun risk on us — the value delivered, not a tally of hours or compute. The split above is illustrative; every quote breaks down the same way.",
+    transparency: "What you're paying for: the agents do the building — which is exactly why a quote lands at a fraction of in-house cost. The price reflects the senior SFCC judgment that directs and reviews them, the integration to a merge-ready PR, and the firm cap that puts overrun risk on us — the value delivered, not a tally of hours or compute. The plan above is illustrative; every quote comes with its own.",
   },
 
   howItWorksPage: {
@@ -395,10 +426,10 @@ const COPY = {
     timeline: [
       { day: "Sign up",      title: "Frictionless registration", body: "One click. No SOW. No sales call. You join the waiting list, and we email you the moment you're admitted." },
       { day: "Admission",    title: "Admission",                  body: "We review and admit by hand. When your spot is up, you receive free starter tokens and access to the dashboard, the Q&A Agent, and the quote engine." },
-      { day: "Connect",      title: "Sandbox or repo access",    body: "You point us at a sandbox/dev instance or grant read-only repository access. With a sandbox we pull its active code version — read-only, nothing is ever written to it — so analysis starts without a repository. A repository is what lets us deliver pull requests. Takes minutes, not days. No production access required." },
-      { day: "Day 1 – 3",    title: "Init: codebase ingestion",  body: "Cartridges mapped, custom vs. base code separated, integration points catalogued, quality signals scored. You receive the State of the Codebase report — and a pre-quoted backlog you can start approving with your free starter tokens. The backlog leads with the foundation task: your automated test suite." },
-      { day: "Day 4 – 7",    title: "Code Review",               body: "Quality and risk assessment across the codebase. Surfaces refactor opportunities, test coverage gaps, and quick wins." },
-      { day: "Day 7",        title: "Default backlog appears",   body: "Your project auto-populates with quoted, prioritizable tasks: refactor work, test suite build-out, quick wins. You approve task-by-task." },
+      { day: "Connect",      title: "Instance or repository access", body: "You point us at a sandbox or dev instance or grant read-only repository access. With an instance we pull its active code version — read-only, nothing is ever written to it — so analysis starts without a repository. A repository is what lets us deliver pull requests. Takes minutes, not days. No production access required." },
+      { day: "Day 1 – 3",    title: "Codebase analysis (Init)",  body: "Cartridges mapped, custom vs. base code separated, integration points catalogued, quality signals scored. You receive the State of the Codebase report — and a pre-quoted backlog, generated from your code. The backlog leads with the foundation task: your automated test suite." },
+      { day: "Day 4 – 7",    title: "Backlog published",         body: "Your operator reviews each recommendation and its price and publishes it — the foundation task first. The code reviews (Best Practices, Security) and the SEO & AI check are not an onboarding stage: they are yours to run from the Agents menu whenever you want them, and any finding can become a request." },
+      { day: "Day 7",        title: "Approve and build",         body: "You approve the foundation task with your free starter tokens and it goes to build. From here you approve request by request: refactor work, quick wins, whatever you filed yourself. Other quotes become approvable once the test suite lands, or once your operator waives it." },
       { day: "Day 7 – 14",   title: "First feature PR lands",    body: "Your incumbent SI reviews and deploys on their schedule. From here, you ship at whatever pace you can approve." },
     ],
     touchHeading: "What we touch. What we never touch.",
@@ -418,7 +449,7 @@ const COPY = {
     recommended: {
       tag: "Foundation task",
       title: "The test suite comes first.",
-      body: "The first item in every Tokenwright backlog is a comprehensive automated test suite, and the rest of the backlog unlocks once it lands. It protects you — regressions caught before production, confidence to ship faster — and it protects us: every future PR lands on tested ground, which is what makes our quality guarantee real. Already have a suite? The foundation task becomes verifying it and wiring it to run on every change.",
+      body: "The first item in every Tokenwright backlog is a comprehensive automated test suite, and the rest of the backlog unlocks once it lands — or once your operator waives it. It protects you — regressions caught before production, confidence to ship faster — and it protects us: every future PR lands on tested ground, which is what makes our quality guarantee real. Already have a suite? The foundation task becomes verifying it and wiring it to run on every change.",
     },
   },
 
@@ -448,7 +479,7 @@ const COPY = {
     },
     agenda: [
       { n: "01", t: "Your roadmap.",   d: "Every backlog item quoted in minutes, built with AI, checked by a senior operator." },
-      { n: "02", t: "Your store.",     d: "Issues caught as they happen, and a first look at setting up promotions just by asking." },
+      { n: "02", t: "Your store.",     d: "Issues caught as they happen, the cause found in your code, and a first look at setting up promotions just by asking." },
       { n: "03", t: "Your knowledge.", d: "Ask how anything works. No documentation, no one person who holds the know-how." },
       { n: "04", t: "Your questions.", d: "Open Q&A with our senior operators." },
     ],
@@ -457,12 +488,13 @@ const COPY = {
       h2: "Agents find it. Senior operators fix it.",
       groups: [
         { label: "Live today", names: [
-          "Q&A", "Monitor", "Performance", "SEO & AI Discoverability",
-          "Best Practices", "Security", "Accessibility", "Localization",
+          "Q&A", "Monitor", "SEO & AI Discoverability",
+          "Best Practices", "Security",
         ]},
         { label: "Coming next", soon: true, names: [
+          "Performance", "Accessibility", "Localization",
           "Promotions", "Data Consistency", "Multi-Site Feature Matrix",
-          "Integration Health", "Job Monitoring", "Config Drift",
+          "Integration Health", "Job Monitoring", "Config Drift", "Custom",
         ]},
       ],
     },

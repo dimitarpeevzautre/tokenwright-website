@@ -82,7 +82,7 @@ function Shift() {
   );
 }
 
-/* ---------------- HOW IT WORKS (4-stage task flow) ---------------- */
+/* ---------------- HOW IT WORKS (4-stage request flow) ---------------- */
 function HowItWorks() {
   const c = window.COPY.how;
   return (

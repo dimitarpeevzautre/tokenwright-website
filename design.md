@@ -167,7 +167,7 @@ Mapping back to the brief:
 
 1. **Buyer assesses fit in 60 seconds, signs up in 90.** → Hero CTA is above the fold; Trial Pack form is reachable from sticky nav and final CTA on every viewport.
 2. **CTO finds answers to top 6 objections without leaving the homepage.** → Objections section is the second-to-last on the homepage, accordion-styled so all six are scannable.
-3. **Every category-defining claim appears verbatim.** → "Agile is dead. You're paying for ceremonies." headlines the Shift section. "Quote in minutes, not weeks" is the featured stepper badge. "We don't want to replace your SI..." closes the manifesto. "Your architecture quality directly lowers your run-rate" surfaces on `/pricing` via the refactor budget line.
+3. **Every category-defining claim appears verbatim.** → "Agile is dead. You're paying for ceremonies." headlines the Shift section. "Quote in minutes, not weeks" is the featured stepper badge. "We don't want to replace your SI..." closes the manifesto.
 4. **ZaUtre mentioned exactly once on homepage.** → One credibility card in the Team section. Footer mention is in the smallprint, not the body.
 5. **Trial Pack is most visually prominent CTA.** → Primary button in nav, hero, and final CTA all point to it. The Trial Pack section gets a `9vw` display number — the largest type on the page after the H1.
 

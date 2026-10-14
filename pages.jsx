@@ -66,12 +66,13 @@ function PricingPage() {
         <div className="container">
           <Eyebrow>Sample quote</Eyebrow>
           <h2 style={{ marginTop: 20, maxWidth: 720 }}>{c.sampleHeading}</h2>
+          <p className="lede" style={{ marginTop: 20, maxWidth: 640 }}>{c.sampleLede}</p>
           <div className="sample-quote">
             <div className="request">"{c.sample.request}"</div>
+            <div className="row"><span className="v">{c.sample.planLabel}</span></div>
             {c.sample.lines.map((ln) => (
-              <div className="row" key={ln.k}>
-                <span>{ln.k}</span>
-                <span className="v">{ln.v}</span>
+              <div className="row" key={ln.n}>
+                <span><span className="v">{ln.n}</span>&ensp;{ln.t}</span>
               </div>
             ))}
             <div className="total">
@@ -97,7 +98,7 @@ function HowItWorksPage() {
       <PageHero crumb={c.crumb} h1={c.h1} lede={c.lede} />
       <section className="section tight">
         <div className="container">
-          <Eyebrow>The four-stage task flow</Eyebrow>
+          <Eyebrow>The four-stage request flow</Eyebrow>
           <h2 style={{ marginTop: 20, maxWidth: 720 }}>{how.h2}</h2>
           <div className="stepper four" style={{ marginTop: 32 }}>
             {how.steps.map((s) => (
@@ -128,7 +129,7 @@ function HowItWorksPage() {
           <Eyebrow>{agents.eyebrow}</Eyebrow>
           <h2 style={{ marginTop: 20, maxWidth: 760 }}>The engine runs even when you're not spending tokens.</h2>
           <p className="lede" style={{ marginTop: 20, maxWidth: 640 }}>
-            Once you're onboarded, the same understanding that prices your tasks is available to your internal team as a set of agents — part of the engine, never separate products to buy.
+            Once you're onboarded, the same understanding that prices your requests is available to your internal team as a set of agents — five live today, ten more coming — part of the engine, never separate products to buy.
           </p>
           <div className="agents-grid">
             {agents.cards.map((a) => (

@@ -173,12 +173,12 @@ function QuoteTicket() {
         <span className="qt-pill">quoted in 04:11</span>
       </div>
       <div className="qt-request">"Add Apple Pay to checkout, including international storefronts and the existing wallet test suite."</div>
-      <div className="qt-line"><span>AI context + generation</span><span className="v">144</span></div>
-      <div className="qt-line"><span>Senior operator review</span><span className="v">240</span></div>
-      <div className="qt-line"><span>Integration &amp; PR effort</span><span className="v">120</span></div>
-      <div className="qt-line"><span>Liability &amp; guarantee</span><span className="v">72</span></div>
+      <div className="qt-line"><span><span className="v">01</span>&ensp;Add Apple Pay as a payment method in checkout</span></div>
+      <div className="qt-line"><span><span className="v">02</span>&ensp;Enable it on every international storefront</span></div>
+      <div className="qt-line"><span><span className="v">03</span>&ensp;Extend the wallet test suite to cover it</span></div>
+      <div className="qt-line"><span><span className="v">04</span>&ensp;Open a tested pull request for your SI to merge</span></div>
       <div className="qt-total"><span>Quoted total</span><span className="v">576 tokens · firm cap</span></div>
-      <div className="qt-anchor">≈ €1,800 delivered — a fixed price, not an hourly estimate.</div>
+      <div className="qt-anchor">≈ €1,800 delivered — one firm total with the plan behind it, not an hourly estimate.</div>
       <div className="qt-note">Tokens are our fixed unit: AI build + senior SFCC review. Never an hourly bill.</div>
     </div>
   );
