@@ -463,18 +463,18 @@ const COPY = {
     // Google Apps Script web app URL (ends in /exec) — see webinar/registrations.gs.
     endpoint: "https://script.google.com/macros/s/AKfycbz_ge1B-rfOCuu1CQOweO-C6sFKETk53xbYN5dJvv8n3StFpzIPmI1pA91CA8BjSQdV/exec",
     // Webinar end — the homepage banner hides itself after this moment.
-    endsAt: "2026-10-20T16:45:00+02:00",
+    endsAt: "2026-10-22T16:45:00+02:00",
     crumb: "Webinar",
     h1: "What's next in Salesforce Commerce Cloud.",
     lede: "How AI agents and senior operators change the way you work through your roadmap, run your store, and know your own code.",
     bar: {
-      label: "Live webinar · Tue 20 October",
+      label: "Live webinar · Thu 22 October",
       text: "What's next in SFCC: agents and senior operators, live.",
       cta: "Register",
     },
     when: {
       label: "When",
-      value: "Tuesday, 20 October 2026",
+      value: "Thursday, 22 October 2026",
       meta: "16:00 CEST · 45 minutes · Online, free",
     },
     agenda: [
@@ -514,7 +514,7 @@ const COPY = {
     },
     done: {
       h: "You're registered.",
-      p: "We'll email the joining link to you before Tuesday, 20 October. See you there.",
+      p: "We'll email the joining link to you before Thursday, 22 October. See you there.",
     },
   },
 };
