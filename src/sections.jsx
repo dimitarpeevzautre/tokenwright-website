@@ -1,10 +1,12 @@
 /* Homepage sections for Tokenwright. */
 
-const { useState } = React;
+import React, { useState } from "react";
+import { COPY } from "./copy.js";
+import { Arrow, Eyebrow, QuoteTicket, scrollToAnchor } from "./components.jsx";
 
 /* ---------------- HERO ---------------- */
 function Hero() {
-  const c = window.COPY.hero;
+  const c = COPY.hero;
   return (
     <section className="hero">
       <div className="container">
@@ -20,7 +22,7 @@ function Hero() {
               <a href="#waitlist" className="btn btn-primary" onClick={(e) => { e.preventDefault(); scrollToAnchor("waitlist"); }}>
                 {c.primary}<Arrow />
               </a>
-              <a href="#/#how-it-works" className="btn-link">
+              <a href="/#how-it-works" className="btn-link">
                 {c.secondary}<Arrow />
               </a>
             </div>
@@ -38,7 +40,7 @@ function Hero() {
 
 /* ---------------- PAINS ---------------- */
 function Pains() {
-  const c = window.COPY.pains;
+  const c = COPY.pains;
   return (
     <section className="section">
       <div className="container">
@@ -65,7 +67,7 @@ function Pains() {
 
 /* ---------------- SHIFT / MANIFESTO ---------------- */
 function Shift() {
-  const c = window.COPY.shift;
+  const c = COPY.shift;
   return (
     <section className="section sunken">
       <div className="container">
@@ -84,7 +86,7 @@ function Shift() {
 
 /* ---------------- HOW IT WORKS (4-stage request flow) ---------------- */
 function HowItWorks() {
-  const c = window.COPY.how;
+  const c = COPY.how;
   return (
     <section className="section" id="how-it-works">
       <div className="container">
@@ -108,7 +110,7 @@ function HowItWorks() {
 
 /* ---------------- AGENTS (always-on intelligence layer) ---------------- */
 function Agents() {
-  const c = window.COPY.agents;
+  const c = COPY.agents;
   return (
     <section className="section sunken" id="agents">
       <div className="container">
@@ -117,8 +119,10 @@ function Agents() {
         <p className="lede" style={{ marginTop: 20, maxWidth: 720 }}>{c.sub}</p>
         <figure className="qa-usecase">
           <img
-            src="assets/qa-agent-example.png"
+            src="/assets/qa-agent-example.png"
             alt="The Q&amp;A Agent answering, in plain English, how to set the 'new' product badge — grounded in the store's actual custom fields and site preferences."
+            width="1206"
+            height="637"
             loading="lazy"
           />
           <figcaption>{c.useCaseCaption}</figcaption>
@@ -142,7 +146,7 @@ function Agents() {
 
 /* ---------------- MANAGED TOKEN ---------------- */
 function TokenSection() {
-  const c = window.COPY.token;
+  const c = COPY.token;
   return (
     <section className="section">
       <div className="container">
@@ -173,7 +177,7 @@ function TokenSection() {
 
 /* ---------------- EXPANSION PATH ---------------- */
 function Expansion() {
-  const c = window.COPY.expansion;
+  const c = COPY.expansion;
   return (
     <section className="section sunken">
       <div className="container">
@@ -197,7 +201,7 @@ function Expansion() {
 
 /* ---------------- ACCESS & TRUST ---------------- */
 function TrustStrip() {
-  const c = window.COPY.trust;
+  const c = COPY.trust;
   return (
     <section className="section" id="trust">
       <div className="container narrow" style={{ maxWidth: 920 }}>
@@ -222,7 +226,7 @@ function TrustStrip() {
 
 /* ---------------- WAITING LIST ---------------- */
 function WaitingList() {
-  const c = window.COPY.waitlist;
+  const c = COPY.waitlist;
   const [data, setData] = useState({});
   const [errors, setErrors] = useState({});
   const [sent, setSent] = useState(false);
@@ -376,7 +380,7 @@ function WaitingList() {
 
 /* ---------------- OBJECTIONS / FAQ ---------------- */
 function Objections() {
-  const c = window.COPY.objections;
+  const c = COPY.objections;
   const [open, setOpen] = useState(0);
   return (
     <section className="section sunken" id="objections">
@@ -404,7 +408,7 @@ function Objections() {
 
 /* ---------------- TEAM ---------------- */
 function Team() {
-  const c = window.COPY.team;
+  const c = COPY.team;
   return (
     <section className="section">
       <div className="container">
@@ -432,7 +436,7 @@ function Team() {
 
 /* ---------------- FINAL CTA ---------------- */
 function FinalCta() {
-  const c = window.COPY.finalCta;
+  const c = COPY.finalCta;
   return (
     <section className="section ink final-cta">
       <div className="container">
@@ -449,15 +453,4 @@ function FinalCta() {
   );
 }
 
-window.Hero = Hero;
-window.Pains = Pains;
-window.Shift = Shift;
-window.HowItWorks = HowItWorks;
-window.Agents = Agents;
-window.TokenSection = TokenSection;
-window.Expansion = Expansion;
-window.TrustStrip = TrustStrip;
-window.WaitingList = WaitingList;
-window.Objections = Objections;
-window.Team = Team;
-window.FinalCta = FinalCta;
+export { Hero, Pains, Shift, HowItWorks, Agents, TokenSection, Expansion, TrustStrip, WaitingList, Objections, Team, FinalCta };

@@ -1,6 +1,6 @@
 /* All site copy in one place. Edit here, not in components. */
 
-const COPY = {
+export const COPY = {
   brand: {
     name: "Tokenwright",
     tag: "Productized, AI-accelerated delivery for Salesforce Commerce Cloud.",
@@ -307,16 +307,16 @@ const COPY = {
     tag: "The velocity layer for Salesforce Commerce Cloud merchants. Quote in minutes. Merge-ready PR in days.",
     cols: [
       { title: "Product", links: [
-        { l: "How it works", h: "#/how-it-works" },
-        { l: "Agents",       h: "#/#agents" },
-        { l: "Pricing",      h: "#/pricing" },
-        { l: "Onboarding",   h: "#/onboarding" },
-        { l: "Join waiting list", h: "#/#waitlist" },
+        { l: "How it works", h: "/how-it-works/" },
+        { l: "Agents",       h: "/#agents" },
+        { l: "Pricing",      h: "/pricing/" },
+        { l: "Onboarding",   h: "/onboarding/" },
+        { l: "Join waiting list", h: "/#waitlist" },
       ]},
       { title: "Company", links: [
-        { l: "Contact",      h: "#/contact" },
-        { l: "Investors",    h: "#/contact" },
-        { l: "Press",        h: "#/contact" },
+        { l: "Contact",      h: "/contact/" },
+        { l: "Investors",    h: "/contact/" },
+        { l: "Press",        h: "/contact/" },
       ]},
       { title: "Legal", links: [
         { l: "Terms",        h: "https://app.tokenwright.com/terms.html" },
@@ -459,64 +459,54 @@ const COPY = {
     lede: "Investors, press, partners, and prospective senior operators — this form goes to the right inbox.",
   },
 
+  // The webinar ran on 22 October 2026. /webinar/ stays up as a short notice so
+  // old links don't 404; it is noindexed and left out of the nav and sitemap.
   webinar: {
-    // Google Apps Script web app URL (ends in /exec) — see webinar/registrations.gs.
-    endpoint: "https://script.google.com/macros/s/AKfycbz_ge1B-rfOCuu1CQOweO-C6sFKETk53xbYN5dJvv8n3StFpzIPmI1pA91CA8BjSQdV/exec",
-    // Webinar end — the homepage banner hides itself after this moment.
-    endsAt: "2026-10-22T16:45:00+02:00",
     crumb: "Webinar",
-    h1: "What's next in Salesforce Commerce Cloud.",
-    lede: "How AI agents and senior operators change the way you work through your roadmap, run your store, and know your own code.",
-    bar: {
-      label: "Live webinar · Thu 22 October",
-      text: "What's next in SFCC: agents and senior operators, live.",
-      cta: "Register",
+    h1: "This webinar has ended.",
+    lede: "“What’s next in Salesforce Commerce Cloud” ran on Thursday, 22 October 2026. Registration is closed.",
+    cta: "Back to the home page",
+  },
+
+  notFound: {
+    crumb: "Not found",
+    h1: "Page not found.",
+    lede: "That page doesn’t exist, or it has moved.",
+    cta: "Back to the home page",
+  },
+
+  /* ─── per-page <title> and meta description (used by the prerender) ─── */
+  meta: {
+    home: {
+      title: "Tokenwright — Managed Tokens for Salesforce Commerce Cloud",
+      description: "Senior operators, amplified by AI. Spend tokens on merge-ready PRs for SFCC — every request quoted in minutes, with a firm cap.",
+      ogTitle: "Tokenwright — Managed Tokens for SFCC",
+      ogDescription: "Spend tokens on merge-ready SFCC pull requests. Every request quoted in minutes, not weeks, with a firm cap — the velocity layer on top of your SI.",
     },
-    when: {
-      label: "When",
-      value: "Thursday, 22 October 2026",
-      meta: "16:00 CEST · 45 minutes · Online, free",
+    howItWorks: {
+      title: "How it works — Tokenwright",
+      description: "From request to merge-ready PR: the four-stage Tokenwright flow for Salesforce Commerce Cloud — request, specification with a firm cap, build, delivery.",
     },
-    agenda: [
-      { n: "01", t: "Your roadmap.",   d: "Every backlog item quoted in minutes, built with AI, checked by a senior operator." },
-      { n: "02", t: "Your store.",     d: "Issues caught as they happen, the cause found in your code, and a first look at setting up promotions just by asking." },
-      { n: "03", t: "Your knowledge.", d: "Ask how anything works. No documentation, no one person who holds the know-how." },
-      { n: "04", t: "Your questions.", d: "Open Q&A with our senior operators." },
-    ],
-    lineup: {
-      eyebrow: "The agents",
-      h2: "Agents find it. Senior operators fix it.",
-      groups: [
-        { label: "Live today", names: [
-          "Q&A", "Monitor", "SEO & AI Discoverability",
-          "Best Practices", "Security",
-        ]},
-        { label: "Coming next", soon: true, names: [
-          "Performance", "Accessibility", "Localization",
-          "Promotions", "Data Consistency", "Multi-Site Feature Matrix",
-          "Integration Health", "Job Monitoring", "Config Drift", "Custom",
-        ]},
-      ],
+    pricing: {
+      title: "Pricing — Tokenwright",
+      description: "Tokenwright plans include a monthly balance of tokens you spend on SFCC requests. Quotes come back in minutes, and the cap on every quote is firm.",
     },
-    form: {
-      title: "Register for the webinar",
-      sub: "We'll email you the joining link before the session.",
-      fields: [
-        { name: "name",    label: "Full name",  type: "text",  placeholder: "Jane Park",           autoComplete: "name" },
-        { name: "email",   label: "Work email", type: "email", placeholder: "jane@retailer.com",   autoComplete: "email" },
-        { name: "company", label: "Company",    type: "text",  placeholder: "Northstar Retail",    autoComplete: "organization" },
-        { name: "title",   label: "Job title",  type: "text",  placeholder: "E-commerce Director", autoComplete: "organization-title" },
-        { name: "phone",   label: "Phone",      type: "tel",   placeholder: "+31 6 1234 5678",     autoComplete: "tel" },
-      ],
-      submit: "Register",
-      foot: "Free. We use these details for this webinar only.",
-      privacy: { l: "Privacy policy", h: "https://app.tokenwright.com/policy.html" },
+    onboarding: {
+      title: "Onboarding — Tokenwright",
+      description: "Your first two weeks with Tokenwright: from admission to your first merge-ready SFCC pull request, typically in under fourteen days.",
     },
-    done: {
-      h: "You're registered.",
-      p: "We'll email the joining link to you before Thursday, 22 October. See you there.",
+    contact: {
+      title: "Contact — Tokenwright",
+      description: "Investors, press, partners and prospective senior operators: send Tokenwright a note and it goes to the right inbox.",
+    },
+    webinar: {
+      title: "This webinar has ended — Tokenwright",
+      description: "The Tokenwright webinar on what’s next in Salesforce Commerce Cloud ran on 22 October 2026. Registration is closed.",
+    },
+    notFound: {
+      title: "Page not found — Tokenwright",
+      description: "That page doesn’t exist, or it has moved.",
     },
   },
 };
 
-window.COPY = COPY;

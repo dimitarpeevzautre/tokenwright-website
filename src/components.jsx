@@ -1,6 +1,7 @@
 /* Shared components for Tokenwright site. */
 
-const { useState, useEffect, useRef } = React;
+import React, { useState } from "react";
+import { COPY } from "./copy.js";
 
 /* ---------------- anchor scroll (sticky-nav aware) ---------------- */
 // Compute an offset scroll target rather than scrollIntoView, so the sticky
@@ -14,51 +15,38 @@ function scrollToAnchor(id) {
 
 /* ---------------- brand mark ---------------- */
 function BrandMark() {
-  return <img className="brand-mark" src="assets/tokenwright-mark.svg" alt="" width="36" height="26" />;
+  return <img className="brand-mark" src="/assets/tokenwright-mark.svg" alt="" width="36" height="26" />;
 }
 
 /* ---------------- top nav ---------------- */
-function TopNav({ route }) {
+function TopNav() {
   const [open, setOpen] = useState(false);
+  // Internal links are plain paths; the click handler in App.jsx turns them
+  // into client-side navigations (and offset anchor scrolls).
   const links = [
-    { l: "How it works", h: "#/how-it-works" },
-    { l: "Agents",       h: "#agents" },
-    { l: "Pricing",      h: "#/pricing" },
-    { l: "Onboarding",   h: "#/onboarding" },
+    { l: "How it works", h: "/how-it-works/" },
+    { l: "Agents",       h: "/#agents" },
+    { l: "Pricing",      h: "/pricing/" },
+    { l: "Onboarding",   h: "/onboarding/" },
   ];
-  const goAnchor = (e, id) => {
-    setOpen(false);
-    if (route === "/") {
-      e.preventDefault();
-      scrollToAnchor(id);
-    } else {
-      e.preventDefault();
-      window.location.hash = "/";
-      setTimeout(() => scrollToAnchor(id), 80);
-    }
-  };
-  const click = (e, h) => {
-    setOpen(false);
-    if (h === "#agents") goAnchor(e, "agents");
-    // "#/..." route links are handled by hashchange
-  };
+  const close = () => setOpen(false);
   return (
     <header className="topnav">
       <div className="container row">
-        <a href="#/" className="brand" onClick={() => setOpen(false)}>
+        <a href="/" className="brand" onClick={close}>
           <BrandMark />
           Tokenwright
         </a>
         <div className="right">
           <nav className={"nav-links " + (open ? "open" : "")}>
             {links.map((l) => (
-              <a key={l.l} href={l.h} onClick={(e) => click(e, l.h)}>{l.l}</a>
+              <a key={l.l} href={l.h} onClick={close}>{l.l}</a>
             ))}
             {/* CTA shown inside the dropdown on mobile (the bar buttons are hidden there) */}
             <a
               className="btn btn-primary btn-sm nav-menu-cta"
-              href={route === "/" ? "#waitlist" : "#/#waitlist"}
-              onClick={(e) => goAnchor(e, "waitlist")}
+              href="/#waitlist"
+              onClick={close}
             >
               Join the waiting list
             </a>
@@ -66,8 +54,7 @@ function TopNav({ route }) {
           <a className="btn btn-secondary btn-sm nav-bar-cta" href="https://app.tokenwright.com">Sign in</a>
           <a
             className="btn btn-primary btn-sm nav-bar-cta"
-            href={route === "/" ? "#waitlist" : "#/#waitlist"}
-            onClick={(e) => goAnchor(e, "waitlist")}
+            href="/#waitlist"
           >
             Join the waiting list
           </a>
@@ -82,32 +69,15 @@ function TopNav({ route }) {
   );
 }
 
-/* ---------------- webinar announcement bar ---------------- */
-// Sits above the nav on every page except the webinar page itself, and
-// retires on its own once the webinar has ended.
-function WebinarBar({ route }) {
-  const c = window.COPY.webinar;
-  if (route === "/webinar" || Date.now() > Date.parse(c.endsAt)) return null;
-  return (
-    <a className="webinar-bar" href="#/webinar">
-      <div className="container">
-        <span className="wb-label"><span className="dot" />{c.bar.label}</span>
-        <span className="wb-text">{c.bar.text}</span>
-        <span className="wb-cta">{c.bar.cta}<Arrow size={12} /></span>
-      </div>
-    </a>
-  );
-}
-
 /* ---------------- footer ---------------- */
 function Foot() {
-  const f = window.COPY.footer;
+  const f = COPY.footer;
   return (
     <footer className="foot">
       <div className="container">
         <div className="row">
           <div>
-            <a href="#/" className="brand" style={{ marginBottom: 14, display: "inline-flex" }}>
+            <a href="/" className="brand" style={{ marginBottom: 14, display: "inline-flex" }}>
               <BrandMark />
               Tokenwright
             </a>
@@ -184,12 +154,4 @@ function QuoteTicket() {
   );
 }
 
-window.scrollToAnchor = scrollToAnchor;
-window.BrandMark = BrandMark;
-window.TopNav = TopNav;
-window.WebinarBar = WebinarBar;
-window.Foot = Foot;
-window.Reveal = Reveal;
-window.Eyebrow = Eyebrow;
-window.Arrow = Arrow;
-window.QuoteTicket = QuoteTicket;
+export { scrollToAnchor, BrandMark, TopNav, Foot, Reveal, Eyebrow, Arrow, QuoteTicket };
