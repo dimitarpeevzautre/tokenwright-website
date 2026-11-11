@@ -1,6 +1,11 @@
 /**
  * Webinar registrations → Google Sheet.
  *
+ * RETIRED: the webinar ran on 22 October 2026 and the site no longer has a
+ * registration form or posts to this script. Kept for reference only; the
+ * deployed web app should be disabled in Apps Script (Deploy > Manage
+ * deployments > Archive).
+ *
  * The website's #/webinar form POSTs (form-encoded) to this script's web-app
  * URL; each registration is appended as a row on the "Registrations" tab.
  *

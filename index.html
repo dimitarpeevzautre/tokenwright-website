@@ -2,16 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Tokenwright — Managed Tokens for Salesforce Commerce Cloud</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Senior operators, amplified by AI. Spend tokens on merge-ready PRs for SFCC — every request quoted in minutes, with a firm cap." />
-
-  <!-- OG / Twitter -->
-  <meta property="og:title" content="Tokenwright — Managed Tokens for SFCC" />
-  <meta property="og:description" content="Spend tokens on merge-ready SFCC pull requests. Every request quoted in minutes, not weeks, with a firm cap — the velocity layer on top of your SI." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tokenwright.com" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <!-- Old hash URLs (#/pricing, #/#waitlist) redirect to the real paths. -->
+  <script>
+    (function () {
+      function redirect() {
+        var h = window.location.hash;
+        if (h.indexOf("#/") !== 0) return;
+        var parts = h.slice(1).split("#");
+        var path = parts[0].replace(/\/+$/, "") + "/";
+        window.location.replace(path + (parts[1] ? "#" + parts[1] : ""));
+      }
+      redirect();
+      window.addEventListener("hashchange", redirect);
+    })();
+  </script>
+  <!--app-head-->
 
   <!-- Fonts: Spectral + Hanken Grotesk + IBM Plex Mono (Google Fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,26 +25,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png" />
-
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon-180.png" />
 </head>
 <body>
-  <div id="root"></div>
-
-  <!-- React + Babel -->
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-
-  <!-- App scripts in dependency order -->
-  <script type="text/babel" src="copy.jsx"></script>
-  <script type="text/babel" src="components.jsx"></script>
-  <script type="text/babel" src="sections.jsx"></script>
-  <script type="text/babel" src="pages.jsx"></script>
-  <script type="text/babel" src="app.jsx"></script>
+  <div id="root"><!--app-html--></div>
+  <script type="module" src="/src/entry-client.jsx"></script>
 </body>
 </html>
